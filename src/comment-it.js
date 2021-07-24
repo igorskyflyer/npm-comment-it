@@ -1,4 +1,4 @@
-const { CommonFormatter } = require('./formatters/commonFormatters')
+const { CommonFormatter, multilineFormatter } = require('./formatters/commonFormatters')
 const cStyleCommentFormatter = require('./formatters/cStyleCommentFormatter')
 const jsxCommentFormatter = require('./formatters/jsxCommentFormatter')
 const xmlCommentFormatter = require('./formatters/xmlCommentFormatter')
@@ -7,11 +7,6 @@ const xmlCommentFormatter = require('./formatters/xmlCommentFormatter')
  * @callback CommentTransform
  * @param {string} value
  * @returns {string}
- */
-
-/**
- * @typedef SingleCommentFormatter
- * @property {CommentTransform} single
  */
 
 /**
@@ -26,14 +21,14 @@ const comment = {
    */
   batch: {
     single: (value) => `REM ${value}`,
-    multi: (value) => `::\n${value}\n::`,
+    multi: (value) => multilineFormatter(value, 'REM'),
   },
   /**
    * @type {CommentFormatter}
    */
   coffeeScript: {
     single: CommonFormatter.Pound,
-    multi: CommonFormatter.SlashAsterisk,
+    multi: (value) => `###\n${value}\n###`,
   },
   /**
    * @type {CommentFormatter}
@@ -50,10 +45,6 @@ const comment = {
   /**
    * @type {CommentFormatter}
    */
-  cShtml: cStyleCommentFormatter,
-  /**
-   * @type {CommentFormatter}
-   */
   css: {
     single: (value) => `/* ${value} */`,
     multi: CommonFormatter.SlashAsterisk,
@@ -63,26 +54,29 @@ const comment = {
    */
   dart: {
     single: CommonFormatter.DoubleSlash,
-    multi: CommonFormatter.DoubleSlash,
+    multi: (value) => multilineFormatter(value, '//'),
   },
   /**
    * @type {CommentFormatter}
    */
   dockerFile: {
     single: CommonFormatter.Pound,
-    multi: CommonFormatter.Pound,
+    multi: CommonFormatter.MultiPound,
   },
   /**
    * @type {CommentFormatter}
    */
   fSharp: {
     single: CommonFormatter.DoubleSlash,
-    multi: (value) => `(*\n${value}\n*)`,
+    multi: (value) => `(* ${value} *)`,
   },
   /**
    * @type {CommentFormatter}
    */
-  go: cStyleCommentFormatter,
+  go: {
+    single: CommonFormatter.DoubleSlash,
+    multi: (value) => multilineFormatter(value, '//'),
+  },
   /**
    * @type {CommentFormatter}
    */
@@ -91,13 +85,6 @@ const comment = {
    * @type {CommentFormatter}
    */
   html: xmlCommentFormatter,
-  /**
-   * @type {CommentFormatter}
-   */
-  jade: {
-    single: (value) => `//- ${value}`,
-    multi: (value) => `//-\n\t ${value}`,
-  },
   /**
    * @type {CommentFormatter}
    */
@@ -119,7 +106,7 @@ const comment = {
    */
   lua: {
     single: (value) => `-- ${value}`,
-    multi: (value) => `--[[\n${value}\n--]]`,
+    multi: (value) => `--[[ ${value} --]]`,
   },
   /**
    * @type {CommentFormatter}
@@ -134,7 +121,7 @@ const comment = {
    */
   perl: {
     single: CommonFormatter.Pound,
-    multi: (value) => `=begin\n${value}\n=cut`,
+    multi: (value) => `=begin ${value} =cut`,
   },
   /**
    * @type {CommentFormatter}
@@ -145,34 +132,28 @@ const comment = {
    */
   powerShell: {
     single: CommonFormatter.Pound,
-    multi: (value) => `<#\n${value}\n#>`,
+    multi: (value) => `<# ${value} #>`,
   },
   /**
    * @type {CommentFormatter}
    */
   pug: {
     single: (value) => `//- ${value}`,
-    multi: (value) => `//-\n\t ${value}`,
+    multi: (value) => `//-\n${multilineFormatter(value, '\t')}`,
   },
   /**
    * @type {CommentFormatter}
    */
   python: {
     single: CommonFormatter.Pound,
-    multi: (value) => {
-      // todo
-      return value
-    },
+    multi: CommonFormatter.MultiPound,
   },
   /**
    * @type {CommentFormatter}
    */
   r: {
     single: CommonFormatter.Pound,
-    multi: (value) => {
-      // todo
-      return value
-    },
+    multi: CommonFormatter.MultiPound,
   },
   /**
    * @type {CommentFormatter}
@@ -183,23 +164,24 @@ const comment = {
    */
   ruby: {
     single: CommonFormatter.Pound,
-    multi: (value) => `=begin\n${value}\n=end`,
+    multi: (value) => `=begin ${value} =end`,
   },
   /**
    * @type {CommentFormatter}
    */
   rust: cStyleCommentFormatter,
   /**
-   * @type {SingleCommentFormatter}
+   * @type {CommentFormatter}
    */
   shellScript: {
     single: CommonFormatter.Pound,
+    multi: CommonFormatter.MultiPound,
   },
   /**
    * @type {CommentFormatter}
    */
   sql: {
-    single: (value) => `--${value}`,
+    single: (value) => `-- ${value}`,
     multi: CommonFormatter.SlashAsterisk,
   },
   /**
@@ -223,8 +205,7 @@ const comment = {
    */
   visualBasic: {
     single: (value) => `' ${value}`,
-    // todo
-    multi: (value) => `' ${value}`,
+    multi: (value) => multilineFormatter(value, "'"),
   },
   /**
    * @type {CommentFormatter}
