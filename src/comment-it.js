@@ -50,6 +50,10 @@ const comment = {
   /**
    * @type {CommentFormatter}
    */
+  cShtml: cStyleCommentFormatter,
+  /**
+   * @type {CommentFormatter}
+   */
   css: {
     single: (value) => `/* ${value} */`,
     multi: CommonFormatter.SlashAsterisk,
@@ -170,6 +174,10 @@ const comment = {
       return value
     },
   },
+  /**
+   * @type {CommentFormatter}
+   */
+  razor: cStyleCommentFormatter,
   /**
    * @type {CommentFormatter}
    */
