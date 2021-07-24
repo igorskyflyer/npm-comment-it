@@ -48,10 +48,11 @@ const comment = {
    */
   cSharp: cStyleCommentFormatter,
   /**
-   * @type {SingleCommentFormatter}
+   * @type {CommentFormatter}
    */
   css: {
     single: (value) => `/* ${value} */`,
+    multi: CommonFormatter.SlashAsterisk,
   },
   /**
    * @type {CommentFormatter}
