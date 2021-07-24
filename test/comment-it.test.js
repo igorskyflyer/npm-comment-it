@@ -1,5 +1,5 @@
 const chai = require('chai').assert
-const { comment } = require('../src/comment-it')
+const { comment, supports } = require('../src/comment-it')
 const cStyleFormatter = require('../src/formatters/cStyleFormatter')
 const jsxFormatter = require('../src/formatters/jsxFormatter')
 const xmlFormatter = require('../src/formatters/xmlFormatter')
@@ -195,4 +195,14 @@ describe('🧪 CommentIt! tests 🧪', () => {
       chai.equal(comment.visualBasic.multi(multiLine), visualBasicResult)
     }) // Visual Basic
   }) // multi()
+
+  describe('supports()', () => {
+    it('should return true', () => {
+      chai.isTrue(supports('javaScript'))
+    })
+
+    it('should return false', () => {
+      chai.isFalse(supports('javaScripT'))
+    })
+  }) // supports()
 })
