@@ -26,7 +26,7 @@ const comment = {
    */
   batch: {
     single: (value) => `REM ${value}`,
-    multi: (value) => `:: ${value} ::`,
+    multi: (value) => `::\n${value}\n::`,
   },
   /**
    * @type {CommentFormatter}
@@ -59,7 +59,7 @@ const comment = {
    */
   fSharp: {
     single: CommonFormatter.DoubleSlash,
-    multi: (value) => `(* ${value} *)`,
+    multi: (value) => `(*\n${value}\n*)`,
   },
   /**
    * @type {CommentFormatter}
@@ -86,14 +86,14 @@ const comment = {
    */
   lua: {
     single: (value) => `-- ${value}`,
-    multi: (value) => `--[[ ${value} --]]`,
+    multi: (value) => `--[[\n${value}\n--]]`,
   },
   /**
    * @type {CommentFormatter}
    */
   perl: {
     single: CommonFormatter.Pound,
-    multi: (value) => `=begin ${value} =cut`,
+    multi: (value) => `=begin\n${value}\n=cut`,
   },
   /**
    * @type {CommentFormatter}
@@ -104,7 +104,7 @@ const comment = {
    */
   powerShell: {
     single: CommonFormatter.Pound,
-    multi: (value) => `<# ${value} #>`,
+    multi: (value) => `<#\n${value}\n#>`,
   },
   /**
    * @type {CommentFormatter}
@@ -131,7 +131,7 @@ const comment = {
    */
   ruby: {
     single: CommonFormatter.Pound,
-    multi: (value) => `=begin ${value} =end`,
+    multi: (value) => `=begin\n${value}\n=end`,
   },
   /**
    * @type {CommentFormatter}
