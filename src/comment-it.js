@@ -91,6 +91,10 @@ const comment = {
   /**
    * @type {CommentFormatter}
    */
+  kotlin: cStyleCommentFormatter,
+  /**
+   * @type {CommentFormatter}
+   */
   lua: {
     single: (value) => `-- ${value}`,
     multi: (value) => `--[[\n${value}\n--]]`,
