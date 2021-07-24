@@ -1,7 +1,9 @@
 const { CommonFormatter, multilineFormatter } = require('./formatters/commonFormatters')
-const cStyleCommentFormatter = require('./formatters/cStyleCommentFormatter')
-const jsxCommentFormatter = require('./formatters/jsxCommentFormatter')
-const xmlCommentFormatter = require('./formatters/xmlCommentFormatter')
+const cStyleFormatter = require('./formatters/cStyleFormatter')
+const doubleSlashFormatter = require('./formatters/doubleSlashFormatter')
+const jsxFormatter = require('./formatters/jsxFormatter')
+const poundFormatter = require('./formatters/poundFormatter')
+const xmlFormatter = require('./formatters/xmlFormatter')
 
 /**
  * @callback CommentTransform
@@ -11,12 +13,16 @@ const xmlCommentFormatter = require('./formatters/xmlCommentFormatter')
 
 /**
  * @typedef CommentFormatter
- * @property {CommentTransform} single
- * @property {CommentTransform} multi
+ * @property {CommentTransform} single Formats the string as a single-line comments.
+ * @property {CommentTransform} multi Formats the string as a multi-line comments.
  */
 
+/**
+ * Contains all formatters.
+ */
 const comment = {
   /**
+   * Batch formatter.
    * @type {CommentFormatter}
    */
   batch: {
@@ -24,6 +30,7 @@ const comment = {
     multi: (value) => multilineFormatter(value, 'REM'),
   },
   /**
+   * CoffeeScript formatter.
    * @type {CommentFormatter}
    */
   coffeeScript: {
@@ -31,18 +38,22 @@ const comment = {
     multi: (value) => `###\n${value}\n###`,
   },
   /**
+   * C formatter.
    * @type {CommentFormatter}
    */
-  c: cStyleCommentFormatter,
+  c: cStyleFormatter,
   /**
+   * C++ formatter.
    * @type {CommentFormatter}
    */
-  cpp: cStyleCommentFormatter,
+  cpp: cStyleFormatter,
   /**
+   * C# formatter.
    * @type {CommentFormatter}
    */
-  cSharp: cStyleCommentFormatter,
+  cSharp: cStyleFormatter,
   /**
+   * CSS formatter.
    * @type {CommentFormatter}
    */
   css: {
@@ -50,20 +61,17 @@ const comment = {
     multi: CommonFormatter.SlashAsterisk,
   },
   /**
+   * Dart formatter.
    * @type {CommentFormatter}
    */
-  dart: {
-    single: CommonFormatter.DoubleSlash,
-    multi: (value) => multilineFormatter(value, '//'),
-  },
+  dart: doubleSlashFormatter,
   /**
+   * Dockerfile formatter.
    * @type {CommentFormatter}
    */
-  dockerFile: {
-    single: CommonFormatter.Pound,
-    multi: CommonFormatter.MultiPound,
-  },
+  dockerFile: poundFormatter,
   /**
+   * F# formatter.
    * @type {CommentFormatter}
    */
   fSharp: {
@@ -71,37 +79,42 @@ const comment = {
     multi: (value) => `(* ${value} *)`,
   },
   /**
+   * Go formatter.
    * @type {CommentFormatter}
    */
-  go: {
-    single: CommonFormatter.DoubleSlash,
-    multi: (value) => multilineFormatter(value, '//'),
-  },
+  go: doubleSlashFormatter,
   /**
+   * Groovy formatter.
    * @type {CommentFormatter}
    */
-  groovy: cStyleCommentFormatter,
+  groovy: cStyleFormatter,
   /**
+   * HTML  formatter.
    * @type {CommentFormatter}
    */
-  html: xmlCommentFormatter,
+  html: xmlFormatter,
   /**
+   * Java formatter.
    * @type {CommentFormatter}
    */
-  java: cStyleCommentFormatter,
+  java: cStyleFormatter,
   /**
+   * JavaScript formatter.
    * @type {CommentFormatter}
    */
-  javaScript: cStyleCommentFormatter,
+  javaScript: cStyleFormatter,
   /**
+   * JSX formatter.
    * @type {CommentFormatter}
    */
-  jsx: jsxCommentFormatter,
+  jsx: jsxFormatter,
   /**
+   * Kotlin formatter.
    * @type {CommentFormatter}
    */
-  kotlin: cStyleCommentFormatter,
+  kotlin: cStyleFormatter,
   /**
+   * Lua formatter.
    * @type {CommentFormatter}
    */
   lua: {
@@ -109,14 +122,17 @@ const comment = {
     multi: (value) => `--[[ ${value} --]]`,
   },
   /**
+   * Objective-C formatter.
    * @type {CommentFormatter}
    */
-  objectiveC: cStyleCommentFormatter,
+  objectiveC: cStyleFormatter,
   /**
+   * Objective-C++ formatter.
    * @type {CommentFormatter}
    */
-  objectiveCpp: cStyleCommentFormatter,
+  objectiveCpp: cStyleFormatter,
   /**
+   * Perl formatter.
    * @type {CommentFormatter}
    */
   perl: {
@@ -124,10 +140,12 @@ const comment = {
     multi: (value) => `=begin ${value} =cut`,
   },
   /**
+   * PHP formatter.
    * @type {CommentFormatter}
    */
-  php: cStyleCommentFormatter,
+  php: cStyleFormatter,
   /**
+   * PowerShell formatter.
    * @type {CommentFormatter}
    */
   powerShell: {
@@ -135,6 +153,7 @@ const comment = {
     multi: (value) => `<# ${value} #>`,
   },
   /**
+   * Pug/Jade formatter.
    * @type {CommentFormatter}
    */
   pug: {
@@ -142,24 +161,22 @@ const comment = {
     multi: (value) => `//-\n${multilineFormatter(value, '\t')}`,
   },
   /**
+   * Python formatter.
    * @type {CommentFormatter}
    */
-  python: {
-    single: CommonFormatter.Pound,
-    multi: CommonFormatter.MultiPound,
-  },
+  python: poundFormatter,
   /**
+   * R formatter.
    * @type {CommentFormatter}
    */
-  r: {
-    single: CommonFormatter.Pound,
-    multi: CommonFormatter.MultiPound,
-  },
+  r: poundFormatter,
   /**
+   * Razor  formatter.
    * @type {CommentFormatter}
    */
-  razor: cStyleCommentFormatter,
+  razor: cStyleFormatter,
   /**
+   * Ruby formatter.
    * @type {CommentFormatter}
    */
   ruby: {
@@ -167,17 +184,17 @@ const comment = {
     multi: (value) => `=begin ${value} =end`,
   },
   /**
+   * Rust formatter.
    * @type {CommentFormatter}
    */
-  rust: cStyleCommentFormatter,
+  rust: cStyleFormatter,
   /**
+   * ShellScript/Bash formatter.
    * @type {CommentFormatter}
    */
-  shellScript: {
-    single: CommonFormatter.Pound,
-    multi: CommonFormatter.MultiPound,
-  },
+  shellScript: poundFormatter,
   /**
+   * SQL formatter.
    * @type {CommentFormatter}
    */
   sql: {
@@ -185,22 +202,27 @@ const comment = {
     multi: CommonFormatter.SlashAsterisk,
   },
   /**
+   * Swift formatter.
    * @type {CommentFormatter}
    */
-  swift: cStyleCommentFormatter,
+  swift: cStyleFormatter,
   /**
+   * TypeScript formatter.
    * @type {CommentFormatter}
    */
-  typeScript: cStyleCommentFormatter,
+  typeScript: cStyleFormatter,
   /**
+   * Vue formatter.
    * @type {CommentFormatter}
    */
-  vue: cStyleCommentFormatter,
+  vue: cStyleFormatter,
   /**
+   * Vue-HTML formatter.
    * @type {CommentFormatter}
    */
-  vueHtml: xmlCommentFormatter,
+  vueHtml: xmlFormatter,
   /**
+   * VisualBasic  formatter.
    * @type {CommentFormatter}
    */
   visualBasic: {
@@ -208,11 +230,22 @@ const comment = {
     multi: (value) => multilineFormatter(value, "'"),
   },
   /**
+   * XML  formatter.
    * @type {CommentFormatter}
    */
-  xml: xmlCommentFormatter,
+  xml: xmlFormatter,
+}
+
+/**
+ * Returns whether the given language is supported.
+ * @param {string} id
+ * @returns {boolean}
+ */
+function supports(id) {
+  return id in comment
 }
 
 module.exports = {
   comment,
+  supports,
 }
