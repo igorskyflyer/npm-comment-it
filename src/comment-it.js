@@ -82,6 +82,10 @@ const comment = {
   /**
    * @type {CommentFormatter}
    */
+  groovy: cStyleCommentFormatter,
+  /**
+   * @type {CommentFormatter}
+   */
   html: xmlCommentFormatter,
   /**
    * @type {CommentFormatter}
