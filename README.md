@@ -20,46 +20,50 @@ npm i "@igor.dvlpr/comment-it"
 
 ### API
 
-Exposes a single `enum` named `comment` where all formatters are stored.
+#### comment
+
+An `object` where all formatters are stored.
+
+<br>
 
 `comment`'s formatters:
 
-- `comment.batch` - **Batch**,
-- `comment.c` - **C**,
-- `comment.coffeeScript` - **CoffeeScript**,
-- `comment.cpp` - **C++**,
-- `comment.cSharp` - **C#**,
-- `comment.css` - **CSS**,
-- `comment.dart` - **Dart**,
-- `comment.dockerFile` - **Dockerfile**,
-- `comment.fSharp` - **F#**,
-- `comment.go` - **Go**,
-- `comment.groovy` - **Groovy**,
-- `comment.html` - **HTML**,
-- `comment.java` - **Java**,
-- `comment.javaScript` - **JavaScript**,
-- `comment.jsx` - **JSX**,
-- `comment.kotlin` - **Kotlin**,
-- `comment.lua` - **Lua**,
-- `comment.objectiveC` - **Objective-C**,
-- `comment.objectiveCpp` - **Objective-C++**,
-- `comment.perl` - **Perl**,
-- `comment.php` - **PHP**,
-- `comment.powerShell` - **PowerShell**,
-- `comment.pug` - **Pug/Jade**,
-- `comment.python` - **Python**,
-- `comment.r` - **R**,
-- `comment.razor` - **Razor**,
-- `comment.ruby` - **Ruby**,
-- `comment.rust` - **Rust**,
-- `comment.shellScript` - **ShellScript**,
-- `comment.sql` - **SQL**,
-- `comment.swift` - **Swift**,
-- `comment.typeScript` - **TypeScript**,
-- `comment.visualBasic` - **VisualBasic**,
-- `comment.vue` - **Vue**,
-- `comment.vueHtml` - **VueHtml**,
-- `comment.xml` - **XML**.
+- **`comment.batch`** - Batch,
+- **`comment.c`** - C,
+- **`comment.coffeeScript`** - CoffeeScript,
+- **`comment.cpp`** - C++,
+- **`comment.cSharp`** - C#,
+- **`comment.css`** - CSS,
+- **`comment.dart`** - Dart,
+- **`comment.dockerFile`** - Dockerfile,
+- **`comment.fSharp`** - F#,
+- **`comment.go`** - Go,
+- **`comment.groovy`** - Groovy,
+- **`comment.html`** - HTML,
+- **`comment.java`** - Java,
+- **`comment.javaScript`** - JavaScript,
+- **`comment.jsx`** - JSX,
+- **`comment.kotlin`** - Kotlin,
+- **`comment.lua`** - Lua,
+- **`comment.objectiveC`** - Objective-C,
+- **`comment.objectiveCpp`** - Objective-C++,
+- **`comment.perl`** - Perl,
+- **`comment.php`** - PHP,
+- **`comment.powerShell`** - PowerShell,
+- **`comment.pug`** - Pug/Jade,
+- **`comment.python`** - Python,
+- **`comment.r`** - R,
+- **`comment.razor`** - Razor,
+- **`comment.ruby`** - Ruby,
+- **`comment.rust`** - Rust,
+- **`comment.shellScript`** - ShellScript,
+- **`comment.sql`** - SQL,
+- **`comment.swift`** - Swift,
+- **`comment.typeScript`** - TypeScript,
+- **`comment.visualBasic`** - VisualBasic,
+- **`comment.vue`** - Vue,
+- **`comment.vueHtml`** - VueHtml,
+- **`comment.xml`** - XML.
 
 <br>
 
@@ -68,7 +72,7 @@ Each formatter exposes two functions, `single()` for single-line comments and `m
 <br>
 <br>
 
-### single()
+#### single()
 
 ```ts
 single(value: string): string
@@ -78,7 +82,7 @@ Returns a single-line comment formatted for the selected language.
 
 <br>
 
-### multi()
+#### multi()
 
 ```ts
 multi(value: string): string
@@ -88,10 +92,20 @@ Returns a multi-line comment formatted for the selected language.
 
 <br>
 
+#### supports()
+
+```ts
+supports(value: string): boolean
+```
+
+Returns whether the given language formatter is supported, case-sensitive.
+
+<br>
+
 ### Examples
 
 ```js
-const { comment } = require('@igor.dvlpr/comment-it')
+const { comment, supports } = require('@igor.dvlpr/comment-it')
 const singleLine = 'hello world'
 const multiLine = `hello
 
@@ -107,4 +121,7 @@ console.log(comment.jsx.single(singleLine)) // prints '{/* hello world */}'
 console.log(comment.coffeeScript.multi(multiLine)) // prints ''###\nhello\n\n\nworld\n\nthis is a test\n###''
 
 // note: new lines in the example results are written as-is for brevity
+
+console.log(supports('lua')) // prints true
+console.log(supports('TYPEscript')) // prints false
 ```
