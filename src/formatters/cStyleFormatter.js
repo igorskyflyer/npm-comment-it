@@ -1,6 +1,6 @@
-const cStyleCommentFormatter = {
+const cStyleFormatter = {
   single: (value) => `// ${value}`,
   multi: (value) => `/* ${value} */`,
 }
 
-module.exports = cStyleCommentFormatter
+module.exports = cStyleFormatter
