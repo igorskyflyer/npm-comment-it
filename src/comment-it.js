@@ -64,6 +64,13 @@ const comment = {
   /**
    * @type {CommentFormatter}
    */
+  dockerFile: {
+    single: CommonFormatter.Pound,
+    multi: CommonFormatter.Pound,
+  },
+  /**
+   * @type {CommentFormatter}
+   */
   fSharp: {
     single: CommonFormatter.DoubleSlash,
     multi: (value) => `(*\n${value}\n*)`,
