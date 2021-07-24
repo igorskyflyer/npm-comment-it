@@ -180,6 +180,14 @@ const comment = {
   /**
    * @type {CommentFormatter}
    */
+  visualBasic: {
+    single: (value) => `' ${value}`,
+    // todo
+    multi: (value) => `' ${value}`,
+  },
+  /**
+   * @type {CommentFormatter}
+   */
   xml: xmlCommentFormatter,
 }
 
