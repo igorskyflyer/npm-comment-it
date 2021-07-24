@@ -237,7 +237,7 @@ const comment = {
 }
 
 /**
- * Returns whether the given language is supported.
+ * Returns whether the given language formatter is supported.
  * @param {string} id
  * @returns {boolean}
  */
