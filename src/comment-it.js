@@ -90,6 +90,13 @@ const comment = {
   /**
    * @type {CommentFormatter}
    */
+  jade: {
+    single: (value) => `//- ${value}`,
+    multi: (value) => `//-\n\t ${value}`,
+  },
+  /**
+   * @type {CommentFormatter}
+   */
   java: cStyleCommentFormatter,
   /**
    * @type {CommentFormatter}
@@ -135,6 +142,13 @@ const comment = {
   powerShell: {
     single: CommonFormatter.Pound,
     multi: (value) => `<#\n${value}\n#>`,
+  },
+  /**
+   * @type {CommentFormatter}
+   */
+  pug: {
+    single: (value) => `//- ${value}`,
+    multi: (value) => `//-\n\t ${value}`,
   },
   /**
    * @type {CommentFormatter}
