@@ -113,6 +113,10 @@ const comment = {
   /**
    * @type {CommentFormatter}
    */
+  objectiveC: cStyleCommentFormatter,
+  /**
+   * @type {CommentFormatter}
+   */
   perl: {
     single: CommonFormatter.Pound,
     multi: (value) => `=begin\n${value}\n=cut`,
