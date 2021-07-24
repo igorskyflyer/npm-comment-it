@@ -4,7 +4,7 @@
 
 <br>
 
-<h4 align="center">36 languages are currently supported.</h4>
+<h4 align="center">🌍 36 languages are currently supported. 🎤</h4>
 
 <br>
 
