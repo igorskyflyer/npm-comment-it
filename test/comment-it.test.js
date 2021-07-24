@@ -1,8 +1,8 @@
 const chai = require('chai').assert
 const { comment } = require('../src/comment-it')
-const cStyleCommentFormatter = require('../src/formatters/cStyleCommentFormatter')
-const jsxCommentFormatter = require('../src/formatters/jsxCommentFormatter')
-const xmlCommentFormatter = require('../src/formatters/xmlCommentFormatter')
+const cStyleFormatter = require('../src/formatters/cStyleFormatter')
+const jsxFormatter = require('../src/formatters/jsxFormatter')
+const xmlFormatter = require('../src/formatters/xmlFormatter')
 const {
   cStyleResult,
   batchResult,
@@ -34,16 +34,16 @@ this is a test`
 describe('🧪 CommentIt! tests 🧪', () => {
   describe('single()', () => {
     it('C, C++, C#, Groovy, Java, JavaScript, Kotlin, Objective-C, Objective-C++, PHP, Razor, Rust, Swift, TypeScript, Vue', () => {
-      chai.equal(cStyleCommentFormatter.single(singleLine), `// ${singleLine}`)
-    }) // cStyleCommentFormatter
+      chai.equal(cStyleFormatter.single(singleLine), `// ${singleLine}`)
+    }) // cStyleFormatter
 
     it('JSX', () => {
-      chai.equal(jsxCommentFormatter.single(singleLine), `{/* ${singleLine} */}`)
-    }) // jsxCommentFormatter
+      chai.equal(jsxFormatter.single(singleLine), `{/* ${singleLine} */}`)
+    }) // jsxFormatter
 
     it('HTML, Vue-HTML, XML', () => {
-      chai.equal(xmlCommentFormatter.single(singleLine), `<!-- ${singleLine} -->`)
-    }) // xmlCommentFormatter
+      chai.equal(xmlFormatter.single(singleLine), `<!-- ${singleLine} -->`)
+    }) // xmlFormatter
 
     it('Batch', () => {
       chai.equal(comment.batch.single(singleLine), `REM ${singleLine}`)
@@ -116,16 +116,16 @@ describe('🧪 CommentIt! tests 🧪', () => {
 
   describe('multi()', () => {
     it('C, C++, C#, Groovy, Java, JavaScript, Kotlin, Objective-C, Objective-C++, PHP, Razor, Rust, Swift, TypeScript, Vue', () => {
-      chai.equal(cStyleCommentFormatter.multi(multiLine), cStyleResult)
-    }) // cStyleCommentFormatter
+      chai.equal(cStyleFormatter.multi(multiLine), cStyleResult)
+    }) // cStyleFormatter
 
     it('JSX', () => {
-      chai.equal(jsxCommentFormatter.multi(multiLine), `{/* ${multiLine} */}`)
-    }) // jsxCommentFormatter
+      chai.equal(jsxFormatter.multi(multiLine), `{/* ${multiLine} */}`)
+    }) // jsxFormatter
 
     it('HTML, Vue-HTML, XML', () => {
-      chai.equal(xmlCommentFormatter.multi(multiLine), `<!--\n${multiLine}\n-->`)
-    }) // xmlCommentFormatter
+      chai.equal(xmlFormatter.multi(multiLine), `<!--\n${multiLine}\n-->`)
+    }) // xmlFormatter
 
     it('Batch', () => {
       chai.equal(comment.batch.multi(multiLine), batchResult)
