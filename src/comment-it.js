@@ -1,3 +1,5 @@
+const { strIsIn } = require('@igor.dvlpr/str-is-in')
+
 const { CommonFormatter, multilineFormatter } = require('./formatters/commonFormatters')
 const cStyleFormatter = require('./formatters/cStyleFormatter')
 const doubleSlashFormatter = require('./formatters/doubleSlashFormatter')
@@ -239,7 +241,9 @@ const comment = {
  * @returns {boolean}
  */
 function supportsLanguage(id) {
-  return id in comment
+  const languages = Object.keys(comment)
+
+  return strIsIn(id, languages, (langId, myId) => langId.toLowerCase() === myId.toLowerCase())
 }
 
 module.exports = {
