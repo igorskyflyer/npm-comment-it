@@ -1,5 +1,5 @@
 const chai = require('chai').assert
-const { comment, supports } = require('../src/comment-it')
+const { comment, supportsLanguage } = require('../src/comment-it')
 const cStyleFormatter = require('../src/formatters/cStyleFormatter')
 const jsxFormatter = require('../src/formatters/jsxFormatter')
 const xmlFormatter = require('../src/formatters/xmlFormatter')
@@ -198,11 +198,11 @@ describe('🧪 CommentIt! tests 🧪', () => {
 
   describe('supports()', () => {
     it('should return true', () => {
-      chai.isTrue(supports('javaScript'))
+      chai.isTrue(supportsLanguage('javaScript'))
     })
 
     it('should return false', () => {
-      chai.isFalse(supports('javaScripT'))
+      chai.isFalse(supportsLanguage('javaScripT'))
     })
   }) // supports()
 })
