@@ -13,7 +13,7 @@
 Install it by running,
 
 ```shell
-npm i "@igor.dvlpr/comment-it"
+npm i **"@igor.dvlpr/comment-it"
 ```
 
 <br>
@@ -23,10 +23,12 @@ npm i "@igor.dvlpr/comment-it"
 #### supportsLanguage()
 
 ```ts
-supportsLanguage(value: string): boolean
+supportsLanguage(id: string): boolean
 ```
 
-Returns whether the given language formatter is supported, case-sensitive.
+Returns whether the given language formatter is supported, **case-sensitive**.
+
+Supported identifiers are: **`batch`**, **`coffeeScript`**, **`c`**, **`cpp`**, **`cSharp`**, **`css`**, **`dart`**, **`dockerFile`**, **`fSharp`**, **`go`**, **`groovy`**, **`html`**, **`java`**, **`javaScript`**, **`jsx`**, **`kotlin`**, **`lua`**, **`objectiveC`**, **`objectiveCpp`**, **`perl`**, **`php`**, **`powerShell`**, **`pug`**, **`python`**, **`r`**, **`razor`**, **`ruby`**, **`rust`**, **`shellScript`**, **`sql`**, **`swift`**, **`typeScript`**, **`vue`**, **`vueHtml`**, **`visualBasic`**, **`xml`**.
 
 <br>
 
