@@ -13,7 +13,7 @@
 Install it by running,
 
 ```shell
-npm i **"@igor.dvlpr/comment-it"
+npm i "@igor.dvlpr/comment-it"
 ```
 
 <br>
