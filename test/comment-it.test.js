@@ -14,7 +14,6 @@ const {
   powerShellResult,
   pugResult,
   rubyResult,
-  sqlResult,
   visualBasicResult,
   doubleSlashResult,
   poundResult,
@@ -120,9 +119,9 @@ describe('🧪 CommentIt! tests 🧪', () => {
       chai.equal(comment.coffeeScript.multi(multiLine), coffeeScriptResult)
     }) // CoffeeScript
 
-    it('CSS', () => {
+    it('CSS, SQL', () => {
       chai.equal(comment.css.multi(multiLine), `/* ${multiLine} */`)
-    }) // CSS
+    }) // CSS, SQL
 
     it('F#', () => {
       chai.equal(comment.fSharp.multi(multiLine), fSharpResult)
@@ -143,10 +142,6 @@ describe('🧪 CommentIt! tests 🧪', () => {
     it('Ruby', () => {
       chai.equal(comment.ruby.multi(multiLine), rubyResult)
     }) // Ruby
-
-    it('SQL', () => {
-      chai.equal(comment.sql.multi(multiLine), sqlResult)
-    }) // SQL
 
     it('Visual Basic', () => {
       chai.equal(comment.visualBasic.multi(multiLine), visualBasicResult)
