@@ -26,7 +26,7 @@ npm i "@igor.dvlpr/comment-it"
 supportsLanguage(id: string): boolean
 ```
 
-Returns whether the given language formatter is supported, **case-sensitive**.
+Returns whether the given language formatter is supported, **case-insensitive**.
 
 Supported identifiers are: **`batch`**, **`coffeeScript`**, **`c`**, **`cpp`**, **`cSharp`**, **`css`**, **`dart`**, **`dockerFile`**, **`fSharp`**, **`go`**, **`groovy`**, **`html`**, **`java`**, **`javaScript`**, **`jsx`**, **`kotlin`**, **`lua`**, **`objectiveC`**, **`objectiveCpp`**, **`perl`**, **`php`**, **`powerShell`**, **`pug`**, **`python`**, **`r`**, **`razor`**, **`ruby`**, **`rust`**, **`shellScript`**, **`sql`**, **`swift`**, **`typeScript`**, **`vue`**, **`vueHtml`**, **`visualBasic`**, **`xml`**.
 
@@ -107,7 +107,7 @@ Returns a multi-line comment formatted for the selected language.
 ### Examples
 
 ```js
-const { comment, supports } = require('@igor.dvlpr/comment-it')
+const { comment, supportsLanguage } = require('@igor.dvlpr/comment-it')
 const singleLine = 'hello world'
 const multiLine = `hello
 
@@ -124,6 +124,7 @@ console.log(comment.coffeeScript.multi(multiLine)) // prints ''###\nhello\n\n\nw
 
 // note: new lines in the example results are written as-is for brevity
 
-console.log(supports('lua')) // prints true
-console.log(supports('TYPEscript')) // prints false
+console.log(supportsLanguage('lua')) // prints true
+console.log(supportsLanguage('TYPEscript')) // prints true
+console.log(supportsLanguage('foo')) // prints false
 ```
