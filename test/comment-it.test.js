@@ -153,8 +153,12 @@ describe('🧪 CommentIt! tests 🧪', () => {
       chai.isTrue(supportsLanguage('javaScript'))
     })
 
+    it('should return true', () => {
+      chai.isTrue(supportsLanguage('typescript'))
+    })
+
     it('should return false', () => {
-      chai.isFalse(supportsLanguage('javaScripT'))
+      chai.isFalse(supportsLanguage('foo'))
     })
   }) // supports()
 })
