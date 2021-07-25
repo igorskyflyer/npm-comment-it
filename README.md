@@ -20,6 +20,16 @@ npm i "@igor.dvlpr/comment-it"
 
 ### API
 
+#### supportsLanguage()
+
+```ts
+supportsLanguage(value: string): boolean
+```
+
+Returns whether the given language formatter is supported, case-sensitive.
+
+<br>
+
 #### comment
 
 An `object` where all formatters are stored.
@@ -72,7 +82,7 @@ Each formatter exposes two functions, `single()` for single-line comments and `m
 <br>
 <br>
 
-#### single()
+##### single()
 
 ```ts
 single(value: string): string
@@ -82,23 +92,13 @@ Returns a single-line comment formatted for the selected language.
 
 <br>
 
-#### multi()
+##### multi()
 
 ```ts
 multi(value: string): string
 ```
 
 Returns a multi-line comment formatted for the selected language.
-
-<br>
-
-#### supports()
-
-```ts
-supports(value: string): boolean
-```
-
-Returns whether the given language formatter is supported, case-sensitive.
 
 <br>
 
