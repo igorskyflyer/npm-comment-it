@@ -135,10 +135,7 @@ const comment = {
    * Perl formatter.
    * @type {CommentFormatter}
    */
-  perl: {
-    single: CommonFormatter.Pound,
-    multi: (value) => `=begin ${value} =cut`,
-  },
+  perl: poundFormatter,
   /**
    * PHP formatter.
    * @type {CommentFormatter}
