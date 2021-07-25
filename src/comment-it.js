@@ -57,7 +57,7 @@ const comment = {
    * @type {CommentFormatter}
    */
   css: {
-    single: (value) => `/* ${value} */`,
+    single: CommonFormatter.SlashAsterisk,
     multi: CommonFormatter.SlashAsterisk,
   },
   /**
