@@ -1,7 +1,7 @@
 {
 	"name": "@igor.dvlpr/comment-it",
 	"description": "📜 Formats the provided string as a comment, either a single or a multi line comment for the given programming language. 36 languages are currently supported. 💻",
-	"version": "1.2.2",
+	"version": "1.2.3",
 	"main": "src/comment-it.js",
 	"files": [
 		"src",
