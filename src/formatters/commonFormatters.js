@@ -4,7 +4,7 @@
  * @param {string} prefix
  * @returns {string}
  */
-const multilineFormatter = (value, prefix) => {
+const multilineFormatter = (value, prefix, spaceNewlines = false) => {
   const lines = value.split(/[\r*\n]{1}/gm)
   const count = lines.length
   let result = ''
@@ -14,7 +14,14 @@ const multilineFormatter = (value, prefix) => {
   }
 
   for (let i = 0; i < count; i++) {
-    result += `${prefix} ${lines[i]}\n`
+    const line = lines[i]
+    let space = ' '
+
+    if (!spaceNewlines && line === '') {
+      space = ''
+    }
+
+    result += `${prefix}${space}${lines[i]}\n`
   }
 
   return result
