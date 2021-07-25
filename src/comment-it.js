@@ -158,7 +158,7 @@ const comment = {
    */
   pug: {
     single: (value) => `//- ${value}`,
-    multi: (value) => `//-\n${multilineFormatter(value, '\t')}`,
+    multi: (value) => `//-\n${multilineFormatter(value, '\t', true)}`,
   },
   /**
    * Python formatter.
@@ -241,11 +241,11 @@ const comment = {
  * @param {string} id
  * @returns {boolean}
  */
-function supports(id) {
+function supportsLanguage(id) {
   return id in comment
 }
 
 module.exports = {
   comment,
-  supports,
+  supportsLanguage,
 }
