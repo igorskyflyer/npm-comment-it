@@ -16,8 +16,6 @@ const powerShellResult = '<# hello\n\n\nworld\n\nthis is a test #>'
 
 const pugResult = '//-\n\t hello\n\t \n\t \n\t world\n\t \n\t this is a test\n'
 
-const rubyResult = '=begin hello\n\n\nworld\n\nthis is a test =end'
-
 const visualBasicResult = "' hello\n'\n'\n' world\n'\n' this is a test\n"
 
 module.exports = {
@@ -30,6 +28,5 @@ module.exports = {
   luaResult,
   powerShellResult,
   pugResult,
-  rubyResult,
   visualBasicResult,
 }
