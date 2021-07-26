@@ -120,7 +120,7 @@ console.log(comment.javaScript.single(singleLine)) // prints '// hello world'
 
 console.log(comment.jsx.single(singleLine)) // prints '{/* hello world */}'
 
-console.log(comment.coffeeScript.multi(multiLine)) // prints ''###\nhello\n\n\nworld\n\nthis is a test\n###''
+console.log(comment.coffeeScript.multi(multiLine)) // prints '###\nhello\n\n\nworld\n\nthis is a test\n###'
 
 // note: new lines in the example results are written as-is for brevity
 
