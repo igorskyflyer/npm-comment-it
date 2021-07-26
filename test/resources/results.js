@@ -8,9 +8,9 @@ const batchResult = 'REM hello\nREM\nREM\nREM world\nREM\nREM this is a test\n'
 
 const coffeeScriptResult = '###\nhello\n\n\nworld\n\nthis is a test\n###'
 
-const fSharpResult = '(* hello\n\n\nworld\n\nthis is a test *)'
-
 const luaResult = '--[[ hello\n\n\nworld\n\nthis is a test --]]'
+
+const matlabResult = '%{\nhello\n\n\nworld\n\nthis is a test\n%}'
 
 const powerShellResult = '<# hello\n\n\nworld\n\nthis is a test #>'
 
@@ -24,8 +24,8 @@ module.exports = {
   poundResult,
   batchResult,
   coffeeScriptResult,
-  fSharpResult,
   luaResult,
+  matlabResult,
   powerShellResult,
   pugResult,
   visualBasicResult,
