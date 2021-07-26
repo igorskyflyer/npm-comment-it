@@ -132,6 +132,15 @@ const comment = {
     multi: (value) => `--[[ ${value} --]]`,
   },
   /**
+   * MATLAB formatter.
+   * @type {CommentFormatter}
+   */
+  matlab: {
+    single: (value) => `% ${value}`,
+    // requires newlines !
+    multi: (value) => `%{\n${value}\n%}`,
+  },
+  /**
    * Objective-C formatter.
    * @type {CommentFormatter}
    */
