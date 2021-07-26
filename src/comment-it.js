@@ -68,6 +68,14 @@ const comment = {
    */
   dart: doubleSlashFormatter,
   /**
+   * Delphi/Object-Pascal formatter.
+   * @type {CommentFormatter}
+   */
+  delphi: {
+    single: (value) => `{ ${value} }`,
+    multi: CommonFormatter.StarParen,
+  },
+  /**
    * Dockerfile formatter.
    * @type {CommentFormatter}
    */
@@ -78,7 +86,7 @@ const comment = {
    */
   fSharp: {
     single: CommonFormatter.DoubleSlash,
-    multi: (value) => `(* ${value} *)`,
+    multi: CommonFormatter.StarParen,
   },
   /**
    * Go formatter.
@@ -133,6 +141,14 @@ const comment = {
    * @type {CommentFormatter}
    */
   objectiveCpp: cStyleFormatter,
+  /**
+   * Pascal formatter.
+   * @type {CommentFormatter}
+   */
+  pascal: {
+    single: (value) => `{ ${value} }`,
+    multi: CommonFormatter.StarParen,
+  },
   /**
    * Perl formatter.
    * @type {CommentFormatter}
