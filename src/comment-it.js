@@ -178,10 +178,7 @@ const comment = {
    * Ruby formatter.
    * @type {CommentFormatter}
    */
-  ruby: {
-    single: CommonFormatter.Pound,
-    multi: (value) => `=begin ${value} =end`,
-  },
+  ruby: poundFormatter,
   /**
    * Rust formatter.
    * @type {CommentFormatter}
