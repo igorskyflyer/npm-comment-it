@@ -32,6 +32,7 @@ const CommonFormatter = {
   SlashAsterisk: (value) => `/* ${value} */`,
   Pound: (value) => `# ${value}`,
   MultiPound: (value) => multilineFormatter(value, '#'),
+  ParenthesisAsterisk: (value) => `(* ${value} *)`,
 }
 
 module.exports = { CommonFormatter, multilineFormatter }
