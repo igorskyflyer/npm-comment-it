@@ -4,7 +4,7 @@
 
 <br>
 
-<h4 align="center">🌍 36 languages are currently supported. 🎤</h4>
+<h4 align="center">🌍 40 languages are currently supported. 🎤</h4>
 
 <br>
 
@@ -28,7 +28,7 @@ supportsLanguage(id: string): boolean
 
 Returns whether the given language formatter is supported, **case-insensitive**.
 
-Supported identifiers are: **`batch`**, **`coffeeScript`**, **`c`**, **`cpp`**, **`cSharp`**, **`css`**, **`dart`**, **`dockerFile`**, **`fSharp`**, **`go`**, **`groovy`**, **`html`**, **`java`**, **`javaScript`**, **`jsx`**, **`kotlin`**, **`lua`**, **`objectiveC`**, **`objectiveCpp`**, **`perl`**, **`php`**, **`powerShell`**, **`pug`**, **`python`**, **`r`**, **`razor`**, **`ruby`**, **`rust`**, **`shellScript`**, **`sql`**, **`swift`**, **`typeScript`**, **`vue`**, **`vueHtml`**, **`visualBasic`**, **`xml`**.
+Supported identifiers are: **`batch`**, **`coffeeScript`**, **`c`**, **`cpp`**, **`cSharp`**, **`css`**, **`dart`**, **`delphi`**, **`dockerFile`**, **`fSharp`**, **`go`**, **`groovy`**, **`html`**, **`java`**, **`javaScript`**, **`jsx`**, **`kotlin`**, **`lua`**, **`objectiveC`**, **`objectiveCpp`**, **`matlab`**, **`pascal`**, **`perl`**, **`php`**, **`powerShell`**, **`pug`**, **`python`**, **`r`**, **`razor`**, **`ruby`**, **`rust`**, **`scala`**, **`shellScript`**, **`sql`**, **`swift`**, **`typeScript`**, **`vue`**, **`vueHtml`**, **`visualBasic`**, **`xml`**.
 
 <br>
 
@@ -47,6 +47,7 @@ An `object` where all formatters are stored.
 - **`comment.cSharp`** - C#,
 - **`comment.css`** - CSS,
 - **`comment.dart`** - Dart,
+- **`comment.delphi`** - Delphi,
 - **`comment.dockerFile`** - Dockerfile,
 - **`comment.fSharp`** - F#,
 - **`comment.go`** - Go,
@@ -57,8 +58,10 @@ An `object` where all formatters are stored.
 - **`comment.jsx`** - JSX,
 - **`comment.kotlin`** - Kotlin,
 - **`comment.lua`** - Lua,
+- **`comment.matlab`** - MATLAB,
 - **`comment.objectiveC`** - Objective-C,
 - **`comment.objectiveCpp`** - Objective-C++,
+- **`comment.pascal`** - Pascal,
 - **`comment.perl`** - Perl,
 - **`comment.php`** - PHP,
 - **`comment.powerShell`** - PowerShell,
@@ -68,6 +71,7 @@ An `object` where all formatters are stored.
 - **`comment.razor`** - Razor,
 - **`comment.ruby`** - Ruby,
 - **`comment.rust`** - Rust,
+- **`comment.scala`** - Scala,
 - **`comment.shellScript`** - ShellScript,
 - **`comment.sql`** - SQL,
 - **`comment.swift`** - Swift,
