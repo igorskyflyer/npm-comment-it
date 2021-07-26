@@ -13,7 +13,6 @@ const {
   luaResult,
   powerShellResult,
   pugResult,
-  rubyResult,
   visualBasicResult,
   doubleSlashResult,
   poundResult,
@@ -37,7 +36,7 @@ describe('🧪 CommentIt! tests 🧪', () => {
       chai.equal(doubleSlashFormatter.single(singleLine), `// ${singleLine}`)
     }) // doubleSlashFormatter
 
-    it('Dockerfile, Perl, Python, R, ShellScript', () => {
+    it('Dockerfile, Perl, Python, R, Ruby, ShellScript', () => {
       chai.equal(poundFormatter.single(singleLine), `# ${singleLine}`)
     }) // poundFormatter
 
@@ -77,10 +76,6 @@ describe('🧪 CommentIt! tests 🧪', () => {
       chai.equal(comment.pug.single(singleLine), `//- ${singleLine}`)
     }) // Pug
 
-    it('Ruby', () => {
-      chai.equal(comment.ruby.single(singleLine), `# ${singleLine}`)
-    }) // Ruby
-
     it('SQL', () => {
       chai.equal(comment.sql.single(singleLine), `-- ${singleLine}`)
     }) // SQL
@@ -99,7 +94,7 @@ describe('🧪 CommentIt! tests 🧪', () => {
       chai.equal(doubleSlashFormatter.multi(multiLine), doubleSlashResult)
     }) // doubleSlashFormatter
 
-    it('Dockerfile, Perl, Python, R, ShellScript', () => {
+    it('Dockerfile, Perl, Python, R, Ruby, ShellScript', () => {
       chai.equal(poundFormatter.multi(multiLine), poundResult)
     }) // poundFormatter
 
@@ -138,10 +133,6 @@ describe('🧪 CommentIt! tests 🧪', () => {
     it('Pug', () => {
       chai.equal(comment.pug.multi(multiLine), pugResult)
     }) // Pug
-
-    it('Ruby', () => {
-      chai.equal(comment.ruby.multi(multiLine), rubyResult)
-    }) // Ruby
 
     it('Visual Basic', () => {
       chai.equal(comment.visualBasic.multi(multiLine), visualBasicResult)
