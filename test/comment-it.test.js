@@ -5,10 +5,10 @@ const jsxFormatter = require('../src/formatters/jsxFormatter')
 const xmlFormatter = require('../src/formatters/xmlFormatter')
 const doubleSlashFormatter = require('../src/formatters/doubleSlashFormatter')
 const poundFormatter = require('../src/formatters/poundFormatter')
+const { CommonFormatter } = require('../src/formatters/commonFormatters')
 const {
   cStyleResult,
   batchResult,
-  fSharpResult,
   coffeeScriptResult,
   luaResult,
   powerShellResult,
@@ -16,6 +16,7 @@ const {
   visualBasicResult,
   doubleSlashResult,
   poundResult,
+  matlabResult,
 } = require('./resources/results')
 
 const singleLine = 'hello world'
@@ -28,7 +29,7 @@ this is a test`
 
 describe('🧪 CommentIt! tests 🧪', () => {
   describe('single()', () => {
-    it('C, C++, C#, Groovy, Java, JavaScript, Kotlin, Objective-C, Objective-C++, PHP, Razor, Rust, Swift, TypeScript, Vue', () => {
+    it('C, C++, C#, Groovy, Java, JavaScript, Kotlin, Objective-C, Objective-C++, PHP, Razor, Rust, Scala, Swift, TypeScript, Vue', () => {
       chai.equal(cStyleFormatter.single(singleLine), `// ${singleLine}`)
     }) // cStyleFormatter
 
@@ -60,6 +61,10 @@ describe('🧪 CommentIt! tests 🧪', () => {
       chai.equal(comment.css.single(singleLine), `/* ${singleLine} */`)
     }) // CSS
 
+    it('Delphi, Pascal', () => {
+      chai.equal(comment.pascal.single(singleLine), `{ ${singleLine} }`)
+    }) // Delphi
+
     it('F#', () => {
       chai.equal(comment.fSharp.single(singleLine), `// ${singleLine}`)
     }) // F#
@@ -67,6 +72,10 @@ describe('🧪 CommentIt! tests 🧪', () => {
     it('Lua', () => {
       chai.equal(comment.lua.single(singleLine), `-- ${singleLine}`)
     }) // Lua
+
+    it('MATLAB', () => {
+      chai.equal(comment.matlab.single(singleLine), `% ${singleLine}`)
+    }) // MATLAB
 
     it('PowerShell', () => {
       chai.equal(comment.perl.single(singleLine), `# ${singleLine}`)
@@ -86,7 +95,7 @@ describe('🧪 CommentIt! tests 🧪', () => {
   }) // single()
 
   describe('multi()', () => {
-    it('C, C++, C#, Groovy, Java, JavaScript, Kotlin, Objective-C, Objective-C++, PHP, Razor, Rust, Swift, TypeScript, Vue', () => {
+    it('C, C++, C#, Groovy, Java, JavaScript, Kotlin, Objective-C, Objective-C++, PHP, Razor, Rust, Scala, Swift, TypeScript, Vue', () => {
       chai.equal(cStyleFormatter.multi(multiLine), cStyleResult)
     }) // cStyleFormatter
 
@@ -106,6 +115,10 @@ describe('🧪 CommentIt! tests 🧪', () => {
       chai.equal(xmlFormatter.multi(multiLine), `<!--\n${multiLine}\n-->`)
     }) // xmlFormatter
 
+    it('F#, Pascal, Delphi', () => {
+      chai.equal(CommonFormatter.StarParen(multiLine), `(* ${multiLine} *)`)
+    }) // CommonFormatter.StarParen
+
     it('Batch', () => {
       chai.equal(comment.batch.multi(multiLine), batchResult)
     }) // Batch
@@ -118,13 +131,13 @@ describe('🧪 CommentIt! tests 🧪', () => {
       chai.equal(comment.css.multi(multiLine), `/* ${multiLine} */`)
     }) // CSS, SQL
 
-    it('F#', () => {
-      chai.equal(comment.fSharp.multi(multiLine), fSharpResult)
-    }) // F#
-
     it('Lua', () => {
       chai.equal(comment.lua.multi(multiLine), luaResult)
     }) // Lua
+
+    it('MATLAB', () => {
+      chai.equal(comment.matlab.multi(multiLine), matlabResult)
+    }) // MATLAB
 
     it('PowerShell', () => {
       chai.equal(comment.powerShell.multi(multiLine), powerShellResult)
