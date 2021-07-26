@@ -91,7 +91,7 @@ const comment = {
    */
   groovy: cStyleFormatter,
   /**
-   * HTML  formatter.
+   * HTML formatter.
    * @type {CommentFormatter}
    */
   html: xmlFormatter,
@@ -184,6 +184,11 @@ const comment = {
    * @type {CommentFormatter}
    */
   rust: cStyleFormatter,
+  /**
+   * Scala formatter.
+   * @type {CommentFormatter}
+   */
+  scala: cStyleFormatter,
   /**
    * ShellScript/Bash formatter.
    * @type {CommentFormatter}
