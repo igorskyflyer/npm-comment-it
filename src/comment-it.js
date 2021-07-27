@@ -149,7 +149,9 @@ const comment = {
 }
 
 /**
- * Gets all available language formatters.
+ * Gets IDs of all available language
+ * formatters. Language formatters are
+ * callable as `comment.\<languageId\>'.
  * @returns {string[]}
  */
 function getLanguageIds() {
