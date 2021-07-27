@@ -149,11 +149,34 @@ const comment = {
 }
 
 /**
- * Gets all available languages.
+ * Gets all available language formatters.
  * @returns {string[]}
  */
 function getLanguageIds() {
   return Object.keys(comment)
+}
+
+/**
+ * Performs a case-insensitive search
+ *  for a language formatter with
+ * the provided `id` and returns it - if
+ * one is found - else returns null.
+ * @param {string} id
+ * @returns {CommentFormatter|null}
+ */
+function language(id) {
+  if (typeof id !== 'string') {
+    return null
+  }
+
+  const allLanguages = getLanguageIds()
+  const languageId = findMatch.full(id, allLanguages)
+
+  if (languageId.length > 0) {
+    return comment[languageId]
+  }
+
+  return null
 }
 
 /**
@@ -169,6 +192,7 @@ function supportsLanguage(id) {
 
 module.exports = {
   comment,
+  language,
   supportsLanguage,
   getLanguageIds,
 }
