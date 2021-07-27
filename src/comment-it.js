@@ -1,4 +1,4 @@
-const { strIsIn } = require('@igor.dvlpr/str-is-in')
+const { strIsIn, findMatch } = require('@igor.dvlpr/str-is-in')
 
 const { CommonFormatter, multilineFormatter } = require('./formatters/commonFormatters')
 const cStyleFormatter = require('./formatters/cStyleFormatter')
@@ -263,6 +263,14 @@ const comment = {
 }
 
 /**
+ * Gets all available languages.
+ * @returns {string[]}
+ */
+function getLanguageIds() {
+  return Object.keys(comment)
+}
+
+/**
  * Returns whether the given language formatter is supported, case-sensitive.
  * @param {string} id
  * @returns {boolean}
@@ -276,4 +284,5 @@ function supportsLanguage(id) {
 module.exports = {
   comment,
   supportsLanguage,
+  getLanguageIds,
 }
