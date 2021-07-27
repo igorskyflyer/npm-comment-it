@@ -20,6 +20,26 @@ npm i "@igor.dvlpr/comment-it"
 
 ### API
 
+#### getLanguageIds()
+
+```ts
+getLanguageIds(): string[]
+```
+
+Gets IDs of all available language formatters. Language formatters are callable as `comment.<languageId>`. See more below at [`comment`](#comment).
+
+<br>
+
+#### language()
+
+```ts
+language(id: string): CommentFormatter | null
+```
+
+Performs a case-insensitive search for a language formatter with the provided `id` and returns it - if one is found - else returns null.
+
+<br>
+
 #### supportsLanguage()
 
 ```ts
@@ -31,6 +51,8 @@ Returns whether the given language formatter is supported, **case-insensitive**.
 Supported identifiers are: **`batch`**, **`coffeeScript`**, **`c`**, **`cpp`**, **`cSharp`**, **`css`**, **`dart`**, **`delphi`**, **`dockerFile`**, **`fSharp`**, **`go`**, **`groovy`**, **`html`**, **`java`**, **`javaScript`**, **`jsx`**, **`kotlin`**, **`lua`**, **`objectiveC`**, **`objectiveCpp`**, **`matlab`**, **`pascal`**, **`perl`**, **`php`**, **`powerShell`**, **`pug`**, **`python`**, **`r`**, **`razor`**, **`ruby`**, **`rust`**, **`scala`**, **`shellScript`**, **`sql`**, **`swift`**, **`typeScript`**, **`vue`**, **`vueHtml`**, **`visualBasic`**, **`xml`**.
 
 <br>
+
+<a id="comment"></a>
 
 #### comment
 
