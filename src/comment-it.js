@@ -20,245 +20,131 @@ const xmlFormatter = require('./formatters/xmlFormatter')
  */
 
 /**
+ * @typedef Comment
+ * @property {CommentFormatter} batch Batch formatter.
+ * @property {CommentFormatter} coffeeScript CoffeeScript formatter.
+ * @property {CommentFormatter} c C formatter.
+ * @property {CommentFormatter} cpp C++ formatter.
+ * @property {CommentFormatter} cSharp C# formatter.
+ * @property {CommentFormatter} css CSS formatter.
+ * @property {CommentFormatter} dart Dart formatter.
+ * @property {CommentFormatter} delphi Delphi/Object-Pascal formatter.
+ * @property {CommentFormatter} dockerFile Dockerfile formatter.
+ * @property {CommentFormatter} fSharp F# formatter.
+ * @property {CommentFormatter} go Go formatter.
+ * @property {CommentFormatter} groovy Groovy formatter.
+ * @property {CommentFormatter} html HTML formatter.
+ * @property {CommentFormatter} java Java formatter.
+ * @property {CommentFormatter} javaScript JavaScript formatter.
+ * @property {CommentFormatter} jsx JSX formatter.
+ * @property {CommentFormatter} kotlin Kotlin formatter.
+ * @property {CommentFormatter} lua Lua formatter.
+ * @property {CommentFormatter} matlab MATLAB formatter.
+ * @property {CommentFormatter} objectiveC Objective-C formatter.
+ * @property {CommentFormatter} objectiveCpp Objective-C++ formatter.
+ * @property {CommentFormatter} pascal Pascal formatter.
+ * @property {CommentFormatter} perl Perl formatter.
+ * @property {CommentFormatter} php PHP formatter.
+ * @property {CommentFormatter} powerShell PowerShell formatter.
+ * @property {CommentFormatter} pug Pug/Jade formatter.
+ * @property {CommentFormatter} python Python formatter.
+ * @property {CommentFormatter} r R formatter.
+ * @property {CommentFormatter} razor Razor formatter.
+ * @property {CommentFormatter} ruby Ruby formatter.
+ * @property {CommentFormatter} rust Rust formatter.
+ * @property {CommentFormatter} scala Scala formatter.
+ * @property {CommentFormatter} scala Scala formatter.
+ * @property {CommentFormatter} shellScript ShellScript/Bash formatter.
+ * @property {CommentFormatter} sql SQL formatter.
+ * @property {CommentFormatter} swift Swift formatter.
+ * @property {CommentFormatter} typeScript TypeScript formatter.
+ * @property {CommentFormatter} vue Vue formatter.
+ * @property {CommentFormatter} vueHtml Vue-HTML formatter.
+ * @property {CommentFormatter} visualBasic Visual Basic formatter.
+ * @property {CommentFormatter} xml XML formatter.
+ */
+
+/**
+ * @type {Comment}
  * Contains all formatters.
  */
 const comment = {
-  /**
-   * Batch formatter.
-   * @type {CommentFormatter}
-   */
   batch: {
     single: (value) => `REM ${value}`,
     multi: (value) => multilineFormatter(value, 'REM'),
   },
-  /**
-   * CoffeeScript formatter.
-   * @type {CommentFormatter}
-   */
   coffeeScript: {
     single: CommonFormatter.Pound,
     multi: (value) => `###\n${value}\n###`,
   },
-  /**
-   * C formatter.
-   * @type {CommentFormatter}
-   */
   c: cStyleFormatter,
-  /**
-   * C++ formatter.
-   * @type {CommentFormatter}
-   */
   cpp: cStyleFormatter,
-  /**
-   * C# formatter.
-   * @type {CommentFormatter}
-   */
   cSharp: cStyleFormatter,
-  /**
-   * CSS formatter.
-   * @type {CommentFormatter}
-   */
   css: {
     single: CommonFormatter.SlashAsterisk,
     multi: CommonFormatter.SlashAsterisk,
   },
-  /**
-   * Dart formatter.
-   * @type {CommentFormatter}
-   */
   dart: doubleSlashFormatter,
-  /**
-   * Delphi/Object-Pascal formatter.
-   * @type {CommentFormatter}
-   */
   delphi: {
     single: (value) => `{ ${value} }`,
     multi: CommonFormatter.StarParen,
   },
-  /**
-   * Dockerfile formatter.
-   * @type {CommentFormatter}
-   */
   dockerFile: poundFormatter,
-  /**
-   * F# formatter.
-   * @type {CommentFormatter}
-   */
   fSharp: {
     single: CommonFormatter.DoubleSlash,
     multi: CommonFormatter.StarParen,
   },
-  /**
-   * Go formatter.
-   * @type {CommentFormatter}
-   */
   go: doubleSlashFormatter,
-  /**
-   * Groovy formatter.
-   * @type {CommentFormatter}
-   */
   groovy: cStyleFormatter,
-  /**
-   * HTML formatter.
-   * @type {CommentFormatter}
-   */
   html: xmlFormatter,
-  /**
-   * Java formatter.
-   * @type {CommentFormatter}
-   */
   java: cStyleFormatter,
-  /**
-   * JavaScript formatter.
-   * @type {CommentFormatter}
-   */
   javaScript: cStyleFormatter,
-  /**
-   * JSX formatter.
-   * @type {CommentFormatter}
-   */
   jsx: jsxFormatter,
-  /**
-   * Kotlin formatter.
-   * @type {CommentFormatter}
-   */
   kotlin: cStyleFormatter,
-  /**
-   * Lua formatter.
-   * @type {CommentFormatter}
-   */
   lua: {
     single: (value) => `-- ${value}`,
     multi: (value) => `--[[ ${value} --]]`,
   },
-  /**
-   * MATLAB formatter.
-   * @type {CommentFormatter}
-   */
   matlab: {
     single: (value) => `% ${value}`,
     // requires newlines !
     multi: (value) => `%{\n${value}\n%}`,
   },
-  /**
-   * Objective-C formatter.
-   * @type {CommentFormatter}
-   */
   objectiveC: cStyleFormatter,
-  /**
-   * Objective-C++ formatter.
-   * @type {CommentFormatter}
-   */
   objectiveCpp: cStyleFormatter,
-  /**
-   * Pascal formatter.
-   * @type {CommentFormatter}
-   */
   pascal: {
     single: (value) => `{ ${value} }`,
     multi: CommonFormatter.StarParen,
   },
-  /**
-   * Perl formatter.
-   * @type {CommentFormatter}
-   */
   perl: poundFormatter,
-  /**
-   * PHP formatter.
-   * @type {CommentFormatter}
-   */
   php: cStyleFormatter,
-  /**
-   * PowerShell formatter.
-   * @type {CommentFormatter}
-   */
   powerShell: {
     single: CommonFormatter.Pound,
     multi: (value) => `<# ${value} #>`,
   },
-  /**
-   * Pug/Jade formatter.
-   * @type {CommentFormatter}
-   */
   pug: {
     single: (value) => `//- ${value}`,
     multi: (value) => `//-\n${multilineFormatter(value, '\t', true)}`,
   },
-  /**
-   * Python formatter.
-   * @type {CommentFormatter}
-   */
   python: poundFormatter,
-  /**
-   * R formatter.
-   * @type {CommentFormatter}
-   */
   r: poundFormatter,
-  /**
-   * Razor  formatter.
-   * @type {CommentFormatter}
-   */
   razor: cStyleFormatter,
-  /**
-   * Ruby formatter.
-   * @type {CommentFormatter}
-   */
   ruby: poundFormatter,
-  /**
-   * Rust formatter.
-   * @type {CommentFormatter}
-   */
   rust: cStyleFormatter,
-  /**
-   * Scala formatter.
-   * @type {CommentFormatter}
-   */
   scala: cStyleFormatter,
-  /**
-   * ShellScript/Bash formatter.
-   * @type {CommentFormatter}
-   */
   shellScript: poundFormatter,
-  /**
-   * SQL formatter.
-   * @type {CommentFormatter}
-   */
   sql: {
     single: (value) => `-- ${value}`,
     multi: CommonFormatter.SlashAsterisk,
   },
-  /**
-   * Swift formatter.
-   * @type {CommentFormatter}
-   */
   swift: cStyleFormatter,
-  /**
-   * TypeScript formatter.
-   * @type {CommentFormatter}
-   */
   typeScript: cStyleFormatter,
-  /**
-   * Vue formatter.
-   * @type {CommentFormatter}
-   */
   vue: cStyleFormatter,
-  /**
-   * Vue-HTML formatter.
-   * @type {CommentFormatter}
-   */
   vueHtml: xmlFormatter,
-  /**
-   * VisualBasic  formatter.
-   * @type {CommentFormatter}
-   */
   visualBasic: {
     single: (value) => `' ${value}`,
     multi: (value) => multilineFormatter(value, "'"),
   },
-  /**
-   * XML  formatter.
-   * @type {CommentFormatter}
-   */
   xml: xmlFormatter,
 }
 
