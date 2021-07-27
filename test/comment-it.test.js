@@ -1,5 +1,5 @@
 const chai = require('chai').assert
-const { comment, supportsLanguage } = require('../src/comment-it')
+const { comment, supportsLanguage, getLanguageIds, language } = require('../src/comment-it')
 const cStyleFormatter = require('../src/formatters/cStyleFormatter')
 const jsxFormatter = require('../src/formatters/jsxFormatter')
 const xmlFormatter = require('../src/formatters/xmlFormatter')
@@ -165,4 +165,20 @@ describe('🧪 CommentIt! tests 🧪', () => {
       chai.isFalse(supportsLanguage('foo'))
     })
   }) // supports()
+
+  describe('getLanguageIds()', () => {
+    it('should return 40', () => {
+      chai.equal(getLanguageIds().length, 40)
+    })
+  }) // getLanguageIds()
+
+  describe('language()', () => {
+    it('should return true', () => {
+      chai.isObject(language('shellscript'))
+    })
+
+    it('should return true', () => {
+      chai.isNull(language('foo'))
+    })
+  }) // language()
 })
