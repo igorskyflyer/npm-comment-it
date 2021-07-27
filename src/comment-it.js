@@ -207,10 +207,10 @@ function supportsLanguage(id) {
 }
 
 /**
- *
- * @param {string} id
- * @param {string} alias
- * @returns {boolean}
+ * Adds an alias to a comment formatter.
+ * @param {import('./LanguageId').LanguageId} id An identifier of an existing comment formatter.
+ * @param {string} alias A new alias name for the comment formatter.
+ * @returns {boolean} Returns true upon success, false otherwise.
  */
 function alias(id, alias) {
   if (typeof id !== 'string' || typeof alias !== 'string') {
