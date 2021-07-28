@@ -167,8 +167,8 @@ describe('🧪 CommentIt! tests 🧪', () => {
   }) // supports()
 
   describe('getLanguageIds()', () => {
-    it('should return 40', () => {
-      chai.equal(getLanguageIds().length, 40)
+    it('should return > 0', () => {
+      chai.isAbove(getLanguageIds().length, 0)
     })
   }) // getLanguageIds()
 
