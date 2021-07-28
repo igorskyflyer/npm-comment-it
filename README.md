@@ -4,7 +4,11 @@
 
 <br>
 
-<h4 align="center">🌍 40 languages are currently supported. 🎤</h4>
+<h4 align="center">🌍 40 <sup>(*)</sup> languages are currently supported. 🎤</h4>
+
+<p align="center">
+<sup>* an additional alias is available for <code>shellScript</code> named <code>bash</code>.</sup>
+</p>
 
 <br>
 
@@ -48,7 +52,17 @@ supportsLanguage(id: string): boolean
 
 Returns whether the given language formatter is supported, **case-insensitive**.
 
-Supported identifiers are: **`batch`**, **`coffeeScript`**, **`c`**, **`cpp`**, **`cSharp`**, **`css`**, **`dart`**, **`delphi`**, **`dockerFile`**, **`fSharp`**, **`go`**, **`groovy`**, **`html`**, **`java`**, **`javaScript`**, **`jsx`**, **`kotlin`**, **`lua`**, **`objectiveC`**, **`objectiveCpp`**, **`matlab`**, **`pascal`**, **`perl`**, **`php`**, **`powerShell`**, **`pug`**, **`python`**, **`r`**, **`razor`**, **`ruby`**, **`rust`**, **`scala`**, **`shellScript`**, **`sql`**, **`swift`**, **`typeScript`**, **`vue`**, **`vueHtml`**, **`visualBasic`**, **`xml`**.
+Supported identifiers are: **`bash`**, **`batch`**, **`coffeeScript`**, **`c`**, **`cpp`**, **`cSharp`**, **`css`**, **`dart`**, **`delphi`**, **`dockerFile`**, **`fSharp`**, **`go`**, **`groovy`**, **`html`**, **`java`**, **`javaScript`**, **`jsx`**, **`kotlin`**, **`lua`**, **`objectiveC`**, **`objectiveCpp`**, **`matlab`**, **`pascal`**, **`perl`**, **`php`**, **`powerShell`**, **`pug`**, **`python`**, **`r`**, **`razor`**, **`ruby`**, **`rust`**, **`scala`**, **`shellScript`**, **`sql`**, **`swift`**, **`typeScript`**, **`vue`**, **`vueHtml`**, **`visualBasic`**, **`xml`**.
+
+<br>
+
+#### alias()
+
+```ts
+ alias(id: LanguageId, alias: string): boolean
+```
+
+Adds an alias for an existing comment formatter. Returns true upon success, false otherwise.
 
 <br>
 
@@ -62,6 +76,7 @@ An `object` where all formatters are stored.
 
 `comment`'s formatters:
 
+- **`comment.bash`** - Bash (alias of `shellScript`),
 - **`comment.batch`** - Batch,
 - **`comment.c`** - C,
 - **`comment.coffeeScript`** - CoffeeScript,
