@@ -1,5 +1,5 @@
 const chai = require('chai').assert
-const { comment, supportsLanguage, getLanguageIds, language } = require('../src/comment-it')
+const { comment, supportsLanguage, getLanguageIds, language, alias } = require('../src/comment-it')
 const cStyleFormatter = require('../src/formatters/cStyleFormatter')
 const jsxFormatter = require('../src/formatters/jsxFormatter')
 const xmlFormatter = require('../src/formatters/xmlFormatter')
@@ -181,4 +181,20 @@ describe('🧪 CommentIt! tests 🧪', () => {
       chai.isNull(language('foo'))
     })
   }) // language()
+
+  describe('alias()', () => {
+    it('should return true', () => {
+      chai.isTrue(alias('javaScript', 'js'))
+    })
+
+    it('should return true', () => {
+      alias('javaScript', 'js')
+      chai.equal(comment.js.single(singleLine), `// ${singleLine}`)
+    })
+
+    it('should return false', () => {
+      // can't overwrite an existing formatter
+      chai.isFalse(alias('javaScript', 'jsx'))
+    })
+  }) // alias()
 })
