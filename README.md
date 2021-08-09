@@ -12,6 +12,10 @@
 
 <br>
 
+✨Since version `2.0.0` `CommentIt!` is a hybrid module that supports both CommonJS (legacy) and ES modules, thanks to [Modern Module](https://github.com/igorskyflyer/npm-modern-module).
+
+<br>
+
 ### Usage
 
 Install it by running,
