@@ -27,6 +27,9 @@ const multilineFormatter = (value, prefix, spaceNewlines = false) => {
   return result
 }
 
+/**
+ * @type {Object.<string, import('../index.js').CommentTransform>}
+ */
 const CommonFormatter = {
   DoubleSlash: (value) => `// ${value}`,
   SlashAsterisk: (value) => `/* ${value} */`,
