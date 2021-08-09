@@ -1,4 +1,3 @@
-
 // this typedef is generated automatically, do not edit it manually!
 
 /**
