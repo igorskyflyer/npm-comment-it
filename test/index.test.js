@@ -1,5 +1,5 @@
 const chai = require('chai').assert
-const { comment, supportsLanguage, getLanguageIds, language, alias } = require('../src/comment-it')
+const { comment, supportsLanguage, getLanguageIds, language, alias } = require('../src/index.js')
 const cStyleFormatter = require('../src/formatters/cStyleFormatter')
 const jsxFormatter = require('../src/formatters/jsxFormatter')
 const xmlFormatter = require('../src/formatters/xmlFormatter')
