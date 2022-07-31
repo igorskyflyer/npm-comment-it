@@ -32,6 +32,7 @@ const xmlFormatter = require('./formatters/xmlFormatter')
  * @property {CommentFormatter} delphi Delphi formatter
  * @property {CommentFormatter} dockerFile Dockerfile formatter
  * @property {CommentFormatter} fSharp F# formatter
+ * @property {CommentFormatter} genie Genie formatter
  * @property {CommentFormatter} go Go formatter
  * @property {CommentFormatter} groovy Groovy formatter
  * @property {CommentFormatter} html HTML formatter
@@ -136,6 +137,11 @@ comment.delphi = {
 comment.fSharp = {
   single: CommonFormatter.DoubleSlash,
   multi: CommonFormatter.StarParen,
+}
+
+comment.genie = {
+  single: (value) => CommonFormatter.DoubleSlash,
+  multi: CommonFormatter.SlashAsterisk,
 }
 
 comment.icon = {
