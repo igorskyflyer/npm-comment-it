@@ -40,6 +40,7 @@ const xmlFormatter = require('./formatters/xmlFormatter')
  * @property {CommentFormatter} jsx JSX formatter
  * @property {CommentFormatter} kotlin Kotlin formatter
  * @property {CommentFormatter} lua Lua formatter
+ * @property {CommentFormatter} maple Maple formatter
  * @property {CommentFormatter} matlab MATLAB formatter
  * @property {CommentFormatter} mercury Mercury formatter
  * @property {CommentFormatter} mql4 MQL4 formatter
@@ -137,6 +138,11 @@ comment.fSharp = {
 comment.lua = {
   single: (value) => `-- ${value}`,
   multi: (value) => `--[[ ${value} --]]`,
+}
+
+comment.maple = {
+  single: (value) => CommonFormatter.Pound,
+  multi: (value) => CommonFormatter.StarParen,
 }
 
 comment.matlab = {
