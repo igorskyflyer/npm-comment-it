@@ -41,6 +41,7 @@ const xmlFormatter = require('./formatters/xmlFormatter')
  * @property {CommentFormatter} kotlin Kotlin formatter
  * @property {CommentFormatter} lua Lua formatter
  * @property {CommentFormatter} matlab MATLAB formatter
+ * @property {CommentFormatter} mql4 MQL4 formatter
  * @property {CommentFormatter} objectiveC Objective-C formatter
  * @property {CommentFormatter} objectiveCpp Objective-C++ formatter
  * @property {CommentFormatter} oz Oz formatter
@@ -86,6 +87,7 @@ comment.c =
   comment.java =
   comment.javaScript =
   comment.kotlin =
+  comment.mql4 =
   comment.objectiveC =
   comment.objectiveCpp =
   comment.php =
