@@ -39,6 +39,7 @@ const xmlFormatter = require('./formatters/xmlFormatter')
  * @property {CommentFormatter} genie Genie formatter
  * @property {CommentFormatter} go Go formatter
  * @property {CommentFormatter} groovy Groovy formatter
+ * @property {CommentFormatter} hack Hack formatter
  * @property {CommentFormatter} html HTML formatter
  * @property {CommentFormatter} icon Icon formatter
  * @property {CommentFormatter} java Java formatter
@@ -93,6 +94,7 @@ comment.c =
   comment.cpp =
   comment.cSharp =
   comment.groovy =
+  comment.hack =
   comment.java =
   comment.javaScript =
   comment.kotlin =
