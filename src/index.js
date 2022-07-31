@@ -40,6 +40,7 @@ const xmlFormatter = require('./formatters/xmlFormatter')
  * @property {CommentFormatter} go Go formatter
  * @property {CommentFormatter} groovy Groovy formatter
  * @property {CommentFormatter} hack Hack formatter
+ * @property {CommentFormatter} haskell Haskell formatter
  * @property {CommentFormatter} html HTML formatter
  * @property {CommentFormatter} icon Icon formatter
  * @property {CommentFormatter} java Java formatter
@@ -166,6 +167,11 @@ comment.fSharp = {
 comment.genie = {
   single: (value) => CommonFormatter.DoubleSlash,
   multi: CommonFormatter.SlashAsterisk,
+}
+
+comment.haskell = {
+  single: (value) => `-- ${value}`,
+  multi: multilineFormatter(value, '--'),
 }
 
 comment.icon = {
