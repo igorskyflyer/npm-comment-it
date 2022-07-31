@@ -31,6 +31,7 @@ const xmlFormatter = require('./formatters/xmlFormatter')
  * @property {CommentFormatter} dart Dart formatter
  * @property {CommentFormatter} delphi Delphi formatter
  * @property {CommentFormatter} dockerFile Dockerfile formatter
+ * @property {CommentFormatter} erlang Erlang formatter
  * @property {CommentFormatter} euphoria Euphoria formatter
  * @property {CommentFormatter} fSharp F# formatter
  * @property {CommentFormatter} genie Genie formatter
@@ -133,6 +134,11 @@ comment.css = {
 comment.delphi = {
   single: (value) => `{ ${value} }`,
   multi: CommonFormatter.StarParen,
+}
+
+comment.erlang = {
+  single: (value) => `% ${value}`,
+  multi: multilineFormatter(value, '%'),
 }
 
 comment.euphoria = {
