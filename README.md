@@ -56,7 +56,7 @@ supportsLanguage(id: string): boolean
 
 Returns whether the given language formatter is supported, **case-insensitive**.
 
-Supported identifiers are: **`bash`**, **`batch`**, **`coffeeScript`**, **`c`**, **`cpp`**, **`cSharp`**, **`css`**, **`dart`**, **`delphi`**, **`dockerFile`**, **`fSharp`**, **`go`**, **`groovy`**, **`html`**, **`java`**, **`javaScript`**, **`jsx`**, **`kotlin`**, **`lua`**, **`objectiveC`**, **`objectiveCpp`**, **`matlab`**, **`pascal`**, **`perl`**, **`php`**, **`powerShell`**, **`pug`**, **`python`**, **`r`**, **`razor`**, **`ruby`**, **`rust`**, **`scala`**, **`shellScript`**, **`sql`**, **`swift`**, **`typeScript`**, **`vue`**, **`vueHtml`**, **`visualBasic`**, **`xml`**.
+Supported identifiers are: **`ada`**,**`bash`**,**`batch`**,**`c`**,**`cSharp`**,**`coffeeScript`**,**`cpp`**,**`crystal`**,**`css`**,**`dart`**,**`delphi`**,**`dockerFile`**,**`elixir`**,**`erlang`**,**`euphoria`**,**`fSharp`**,**`fortran`**,**`genie`**,**`go`**,**`groovy`**,**`hack`**,**`haskell`**,**`html`**,**`icon`**,**`java`**,**`javaScript`**,**`jsx`**,**`julia`**,**`kotlin`**,**`lisp`**,**`liveCode`**,**`lua`**,**`maple`**,**`matlab`**,**`mercury`**,**`mql4`**,**`objectiveC`**,**`objectiveCpp`**,**`oz`**,**`pascal`**,**`perl`**,**`php`**,**`powerShell`**,**`pug`**,**`python`**,**`q`**,**`r`**,**`razor`**,**`red`**,**`ring`**,**`ruby`**,**`rust`**,**`scala`**,**`shellScript`**,**`sql`**,**`swift`**,**`typeScript`**,**`vala`**,**`visualBasic`**,**`vue`**,**`vueHtml`**,**`xml`**.
 
 <br>
 
@@ -80,49 +80,69 @@ An `object` where all formatters are stored.
 
 `comment`'s formatters:
 
-- **`comment.bash`** - Bash (alias of `shellScript`),
-- **`comment.batch`** - Batch,
-- **`comment.c`** - C,
-- **`comment.coffeeScript`** - CoffeeScript,
-- **`comment.cpp`** - C++,
-- **`comment.cSharp`** - C#,
-- **`comment.css`** - CSS,
-- **`comment.dart`** - Dart,
-- **`comment.delphi`** - Delphi,
-- **`comment.dockerFile`** - Dockerfile,
-- **`comment.fSharp`** - F#,
-- **`comment.go`** - Go,
-- **`comment.groovy`** - Groovy,
-- **`comment.html`** - HTML,
-- **`comment.java`** - Java,
-- **`comment.javaScript`** - JavaScript,
-- **`comment.jsx`** - JSX,
-- **`comment.kotlin`** - Kotlin,
-- **`comment.lua`** - Lua,
-- **`comment.matlab`** - MATLAB,
-- **`comment.objectiveC`** - Objective-C,
-- **`comment.objectiveCpp`** - Objective-C++,
-- **`comment.pascal`** - Pascal,
-- **`comment.perl`** - Perl,
-- **`comment.php`** - PHP,
-- **`comment.powerShell`** - PowerShell,
-- **`comment.pug`** - Pug/Jade,
-- **`comment.python`** - Python,
-- **`comment.r`** - R,
-- **`comment.razor`** - Razor,
-- **`comment.ruby`** - Ruby,
-- **`comment.rust`** - Rust,
-- **`comment.scala`** - Scala,
-- **`comment.shellScript`** - ShellScript,
-- **`comment.sql`** - SQL,
-- **`comment.swift`** - Swift,
-- **`comment.typeScript`** - TypeScript,
-- **`comment.visualBasic`** - VisualBasic,
-- **`comment.vue`** - Vue,
-- **`comment.vueHtml`** - VueHtml,
-- **`comment.xml`** - XML.
-
-<br>
+- **`comment.ada`** - Ada
+- **`comment.bash`** - Bash (alias of `shellScript`)
+- **`comment.batch`** - Batch
+- **`comment.c`** - C
+- **`comment.cSharp`** - C#
+- **`comment.coffeeScript`** - CoffeeScript
+- **`comment.cpp`** - C++
+- **`comment.crystal`** - Crystal
+- **`comment.css`** - CSS
+- **`comment.dart`** - Dart
+- **`comment.delphi`** - Delphi
+- **`comment.dockerFile`** - Dockerfile
+- **`comment.elixir`** - Elixir
+- **`comment.erlang`** - Erlang
+- **`comment.euphoria`** - Euphoria
+- **`comment.fortran`** - Fortran
+- **`comment.fSharp`** - F#
+- **`comment.genie`** - Genie
+- **`comment.go`** - Go
+- **`comment.groovy`** - Groovy
+- **`comment.hack`** - Hack
+- **`comment.haskell`** - Haskell
+- **`comment.html`** - HTML
+- **`comment.icon`** - Icon
+- **`comment.java`** - Java
+- **`comment.javaScript`** - JavaScript
+- **`comment.jsx`** - JSX
+- **`comment.julia`** - Julia
+- **`comment.kotlin`** - Kotlin
+- **`comment.lisp`** - Lisp
+- **`comment.liveCode`** - LiveCode
+- **`comment.lua`** - Lua
+- **`comment.maple`** - Maple
+- **`comment.matlab`** - MATLAB
+- **`comment.mercury`** - Mercury
+- **`comment.mql4`** - MQL4
+- **`comment.objectiveC`** - Objective-C
+- **`comment.objectiveCpp`** - Objective-C++
+- **`comment.oz`** - Oz
+- **`comment.pascal`** - Pascal
+- **`comment.perl`** - Perl
+- **`comment.php`** - PHP
+- **`comment.powerShell`** - PowerShell
+- **`comment.pug`** - Pug/Jade
+- **`comment.python`** - Python
+- **`comment.q`** - Q
+- **`comment.r`** - R
+- **`comment.razor`** - Razor
+- **`comment.red`** - Red
+- **`comment.ring`** - Ring
+- **`comment.ruby`** - Ruby
+- **`comment.rust`** - Rust
+- **`comment.scala`** - Scala
+- **`comment.shellScript`** - ShellScript/Bash
+- **`comment.sql`** - SQL
+- **`comment.swift`** - Swift
+- **`comment.typeScript`** - TypeScript
+- **`comment.vala`** - Vala
+- **`comment.visualBasic`** - VisualBasic
+- **`comment.vue`** - Vue
+- **`comment.vueHtml`** - VueHtml
+- **`comment.xml`** - XML
+  <br>
 
 Each formatter exposes two functions, `single()` for single-line comments and `multi()` for multi-line comments.
 
