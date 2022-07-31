@@ -35,6 +35,7 @@ const xmlFormatter = require('./formatters/xmlFormatter')
  * @property {CommentFormatter} go Go formatter
  * @property {CommentFormatter} groovy Groovy formatter
  * @property {CommentFormatter} html HTML formatter
+ * @property {CommentFormatter} icon Icon formatter
  * @property {CommentFormatter} java Java formatter
  * @property {CommentFormatter} javaScript JavaScript formatter
  * @property {CommentFormatter} jsx JSX formatter
@@ -135,6 +136,11 @@ comment.delphi = {
 comment.fSharp = {
   single: CommonFormatter.DoubleSlash,
   multi: CommonFormatter.StarParen,
+}
+
+comment.icon = {
+  single: CommonFormatter.Pound,
+  multi: multilineFormatter(value, '#'),
 }
 
 comment.lua = {
