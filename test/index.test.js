@@ -36,7 +36,7 @@ this is a test`
 
 describe('🧪 CommentIt! tests 🧪', () => {
   describe('single()', () => {
-    it('C, C++, C#, Groovy, Java, JavaScript, Kotlin, MQL4, Objective-C, Objective-C++, PHP, Razor, Ring, Rust, Scala, Swift, TypeScript, Vue, LiveCode, Hack', () => {
+    it('C, C#, C++, Groovy, Hack, Java, JavaScript, Kotlin, LiveCode, MQL4, Objective-C, Objective-C++, PHP, Razor, Ring, Rust, Scala, Swift, TypeScript, Vue', () => {
       chai.equal(cStyleFormatter.single(singleLine), `// ${singleLine}`)
     }) // cStyleFormatter
 
@@ -44,7 +44,7 @@ describe('🧪 CommentIt! tests 🧪', () => {
       chai.equal(doubleSlashFormatter.single(singleLine), `// ${singleLine}`)
     }) // doubleSlashFormatter
 
-    it('Dockerfile, Perl, Python, R, Ruby, ShellScript, Elixir, Crystal', () => {
+    it('Crystal, Dockerfile, Elixir, Perl, Python, R, Ruby, ShellScript', () => {
       chai.equal(poundFormatter.single(singleLine), `# ${singleLine}`)
     }) // poundFormatter
 
@@ -84,15 +84,15 @@ describe('🧪 CommentIt! tests 🧪', () => {
       chai.equal(comment.fortran.multi(multiLine), fortranResult)
     }) // Fortran
 
-    it('Lua, Haskell, Ada', () => {
+    it('Ada, Haskell, Lua', () => {
       chai.equal(comment.lua.single(singleLine), `-- ${singleLine}`)
     }) // Lua, Haskell, Ada
 
-    it('MATLAB, Mercury, Oz, Erlang', () => {
+    it('Erlang, MATLAB, Mercury, Oz', () => {
       chai.equal(comment.matlab.single(singleLine), `% ${singleLine}`)
     }) // MATLAB, Mercury, Oz, Erlang
 
-    it('PowerShell, Maple, Icon, Julia', () => {
+    it('Icon, Julia, Maple, PowerShell', () => {
       chai.equal(comment.perl.single(singleLine), `# ${singleLine}`)
     }) // PowerShell, Maple, Julia
 
@@ -104,7 +104,7 @@ describe('🧪 CommentIt! tests 🧪', () => {
       chai.equal(comment.q.single(singleLine), `/ ${singleLine}`)
     }) // Q
 
-    it('Red, Lisp', () => {
+    it('Lisp, Red', () => {
       chai.equal(comment.red.single(singleLine), `; ${singleLine}`)
     }) // Red, Lisp
 
@@ -118,7 +118,7 @@ describe('🧪 CommentIt! tests 🧪', () => {
   }) // single()
 
   describe('multi()', () => {
-    it('C, C++, C#, Groovy, Java, JavaScript, Kotlin, MQL4, Objective-C, Objective-C++, PHP, Razor, Ring, Rust, Scala, Swift, TypeScript, Vue, LiveCode, Hack', () => {
+    it('C, C#, C++, Groovy, Hack, Java, JavaScript, Kotlin, LiveCode, MQL4, Objective-C, Objective-C++, PHP, Razor, Ring, Rust, Scala, Swift, TypeScript, Vue', () => {
       chai.equal(cStyleFormatter.multi(multiLine), cStyleResult)
     }) // cStyleFormatter
 
@@ -126,7 +126,7 @@ describe('🧪 CommentIt! tests 🧪', () => {
       chai.equal(doubleSlashFormatter.multi(multiLine), doubleSlashResult)
     }) // doubleSlashFormatter
 
-    it('Dockerfile, Perl, Python, R, Ruby, ShellScript, Elixir, Crystal', () => {
+    it('Crystal, Dockerfile, Elixir, Perl, Python, R, Ruby, ShellScript', () => {
       chai.equal(poundFormatter.multi(multiLine), poundResult)
     }) // poundFormatter
 
@@ -138,7 +138,7 @@ describe('🧪 CommentIt! tests 🧪', () => {
       chai.equal(xmlFormatter.multi(multiLine), `<!--\n${multiLine}\n-->`)
     }) // xmlFormatter
 
-    it('F#, Pascal, Delphi, Maple', () => {
+    it('Delphi, F#, Maple, Pascal', () => {
       chai.equal(CommonFormatter.StarParen(multiLine), `(* ${multiLine} *)`)
     }) // CommonFormatter.StarParen
 
@@ -162,7 +162,7 @@ describe('🧪 CommentIt! tests 🧪', () => {
       chai.equal(comment.lua.multi(multiLine), luaResult)
     }) // Lua
 
-    it('Haskell, Ada', () => {
+    it('Ada, Haskell', () => {
       chai.equal(comment.haskell.multi(multiLine), haskellResult)
     }) // Haskell, Ada
 
@@ -170,7 +170,7 @@ describe('🧪 CommentIt! tests 🧪', () => {
       chai.equal(comment.matlab.multi(multiLine), matlabResult)
     }) // MATLAB
 
-    it('Mercury, Erlang', () => {
+    it('Erlang, Mercury', () => {
       chai.equal(comment.mercury.multi(multiLine), mercuryResult)
     }) // Mercury, Erlang
 
@@ -190,7 +190,7 @@ describe('🧪 CommentIt! tests 🧪', () => {
       chai.equal(comment.q.multi(multiLine), qResult)
     }) // Q
 
-    it('Red, Lisp', () => {
+    it('Lisp, Red', () => {
       chai.equal(comment.red.multi(multiLine), redResult)
     }) // Red, Lisp
 
