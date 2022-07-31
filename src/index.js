@@ -341,15 +341,6 @@ function alias(id, alias) {
   return false
 }
 
-console.log(
-  CommonFormatter.ColonMulti(`hello
-
-
-world
-
-this is a test`)
-)
-
 module.exports = {
   comment,
   language,
