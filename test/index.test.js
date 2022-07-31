@@ -5,7 +5,7 @@ const jsxFormatter = require('../src/formatters/jsxFormatter')
 const xmlFormatter = require('../src/formatters/xmlFormatter')
 const doubleSlashFormatter = require('../src/formatters/doubleSlashFormatter')
 const poundFormatter = require('../src/formatters/poundFormatter')
-const { CommonFormatter } = require('../src/formatters/commonFormatters')
+const { CommonFormatter, multilineFormatter } = require('../src/formatters/commonFormatters')
 const {
   cStyleResult,
   batchResult,
@@ -17,6 +17,13 @@ const {
   doubleSlashResult,
   poundResult,
   matlabResult,
+  redResult,
+  qResult,
+  mercuryResult,
+  iconResult,
+  haskellResult,
+  fortranResult,
+  juliaResult,
 } = require('./resources/results')
 
 const singleLine = 'hello world'
@@ -29,7 +36,7 @@ this is a test`
 
 describe('🧪 CommentIt! tests 🧪', () => {
   describe('single()', () => {
-    it('C, C++, C#, Groovy, Java, JavaScript, Kotlin, Objective-C, Objective-C++, PHP, Razor, Rust, Scala, Swift, TypeScript, Vue', () => {
+    it('C, C++, C#, Groovy, Java, JavaScript, Kotlin, MQL4, Objective-C, Objective-C++, PHP, Razor, Ring, Rust, Scala, Swift, TypeScript, Vue, LiveCode, Hack', () => {
       chai.equal(cStyleFormatter.single(singleLine), `// ${singleLine}`)
     }) // cStyleFormatter
 
@@ -37,7 +44,7 @@ describe('🧪 CommentIt! tests 🧪', () => {
       chai.equal(doubleSlashFormatter.single(singleLine), `// ${singleLine}`)
     }) // doubleSlashFormatter
 
-    it('Dockerfile, Perl, Python, R, Ruby, ShellScript', () => {
+    it('Dockerfile, Perl, Python, R, Ruby, ShellScript, Elixir, Crystal', () => {
       chai.equal(poundFormatter.single(singleLine), `# ${singleLine}`)
     }) // poundFormatter
 
@@ -63,27 +70,43 @@ describe('🧪 CommentIt! tests 🧪', () => {
 
     it('Delphi, Pascal', () => {
       chai.equal(comment.pascal.single(singleLine), `{ ${singleLine} }`)
-    }) // Delphi
+    }) // Delphi, Pascal
 
-    it('F#', () => {
+    it('Euphoria', () => {
+      chai.equal(comment.euphoria.single(singleLine), `#! ${singleLine}`)
+    }) // Euphoria
+
+    it('F#, Genie, Vala', () => {
       chai.equal(comment.fSharp.single(singleLine), `// ${singleLine}`)
-    }) // F#
+    }) // F#, Genie, Vala
 
-    it('Lua', () => {
+    it('Fortran', () => {
+      chai.equal(comment.fortran.multi(multiLine), fortranResult)
+    }) // Fortran
+
+    it('Lua, Haskell, Ada', () => {
       chai.equal(comment.lua.single(singleLine), `-- ${singleLine}`)
-    }) // Lua
+    }) // Lua, Haskell, Ada
 
-    it('MATLAB', () => {
+    it('MATLAB, Mercury, Oz, Erlang', () => {
       chai.equal(comment.matlab.single(singleLine), `% ${singleLine}`)
-    }) // MATLAB
+    }) // MATLAB, Mercury, Oz, Erlang
 
-    it('PowerShell', () => {
+    it('PowerShell, Maple, Icon, Julia', () => {
       chai.equal(comment.perl.single(singleLine), `# ${singleLine}`)
-    }) // PowerShell
+    }) // PowerShell, Maple, Julia
 
     it('Pug', () => {
       chai.equal(comment.pug.single(singleLine), `//- ${singleLine}`)
     }) // Pug
+
+    it('Q', () => {
+      chai.equal(comment.q.single(singleLine), `/ ${singleLine}`)
+    }) // Q
+
+    it('Red, Lisp', () => {
+      chai.equal(comment.red.single(singleLine), `; ${singleLine}`)
+    }) // Red, Lisp
 
     it('SQL', () => {
       chai.equal(comment.sql.single(singleLine), `-- ${singleLine}`)
@@ -95,7 +118,7 @@ describe('🧪 CommentIt! tests 🧪', () => {
   }) // single()
 
   describe('multi()', () => {
-    it('C, C++, C#, Groovy, Java, JavaScript, Kotlin, Objective-C, Objective-C++, PHP, Razor, Rust, Scala, Swift, TypeScript, Vue', () => {
+    it('C, C++, C#, Groovy, Java, JavaScript, Kotlin, MQL4, Objective-C, Objective-C++, PHP, Razor, Ring, Rust, Scala, Swift, TypeScript, Vue, LiveCode, Hack', () => {
       chai.equal(cStyleFormatter.multi(multiLine), cStyleResult)
     }) // cStyleFormatter
 
@@ -103,7 +126,7 @@ describe('🧪 CommentIt! tests 🧪', () => {
       chai.equal(doubleSlashFormatter.multi(multiLine), doubleSlashResult)
     }) // doubleSlashFormatter
 
-    it('Dockerfile, Perl, Python, R, Ruby, ShellScript', () => {
+    it('Dockerfile, Perl, Python, R, Ruby, ShellScript, Elixir, Crystal', () => {
       chai.equal(poundFormatter.multi(multiLine), poundResult)
     }) // poundFormatter
 
@@ -115,7 +138,7 @@ describe('🧪 CommentIt! tests 🧪', () => {
       chai.equal(xmlFormatter.multi(multiLine), `<!--\n${multiLine}\n-->`)
     }) // xmlFormatter
 
-    it('F#, Pascal, Delphi', () => {
+    it('F#, Pascal, Delphi, Maple', () => {
       chai.equal(CommonFormatter.StarParen(multiLine), `(* ${multiLine} *)`)
     }) // CommonFormatter.StarParen
 
@@ -127,17 +150,33 @@ describe('🧪 CommentIt! tests 🧪', () => {
       chai.equal(comment.coffeeScript.multi(multiLine), coffeeScriptResult)
     }) // CoffeeScript
 
-    it('CSS, SQL', () => {
+    it('CSS, Euphoria, Genie, Oz, SQL, Vala', () => {
       chai.equal(comment.css.multi(multiLine), `/* ${multiLine} */`)
     }) // CSS, SQL
+
+    it('Julia', () => {
+      chai.equal(comment.julia.multi(multiLine), juliaResult)
+    }) // Julia
 
     it('Lua', () => {
       chai.equal(comment.lua.multi(multiLine), luaResult)
     }) // Lua
 
+    it('Haskell, Ada', () => {
+      chai.equal(comment.haskell.multi(multiLine), haskellResult)
+    }) // Haskell, Ada
+
     it('MATLAB', () => {
       chai.equal(comment.matlab.multi(multiLine), matlabResult)
     }) // MATLAB
+
+    it('Mercury, Erlang', () => {
+      chai.equal(comment.mercury.multi(multiLine), mercuryResult)
+    }) // Mercury, Erlang
+
+    it('Icon', () => {
+      chai.equal(comment.icon.multi(multiLine), iconResult)
+    }) // Icon
 
     it('PowerShell', () => {
       chai.equal(comment.powerShell.multi(multiLine), powerShellResult)
@@ -146,6 +185,14 @@ describe('🧪 CommentIt! tests 🧪', () => {
     it('Pug', () => {
       chai.equal(comment.pug.multi(multiLine), pugResult)
     }) // Pug
+
+    it('Q', () => {
+      chai.equal(comment.q.multi(multiLine), qResult)
+    }) // Q
+
+    it('Red, Lisp', () => {
+      chai.equal(comment.red.multi(multiLine), redResult)
+    }) // Red, Lisp
 
     it('Visual Basic', () => {
       chai.equal(comment.visualBasic.multi(multiLine), visualBasicResult)
