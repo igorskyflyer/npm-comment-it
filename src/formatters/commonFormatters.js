@@ -31,9 +31,13 @@ const multilineFormatter = (value, prefix, spaceNewlines = false) => {
  * @type {Object.<string, import('../index.js').CommentTransform>}
  */
 const CommonFormatter = {
+  ColonMulti: (value) => multilineFormatter(value, ';'),
+  ColonSingle: (value) => `; ${value}`,
+  DoubleDash: (value) => `-- ${value}`,
   DoubleSlash: (value) => `// ${value}`,
-  SlashAsterisk: (value) => `/* ${value} */`,
+  Percent: (value) => `% ${value}`,
   Pound: (value) => `# ${value}`,
+  SlashAsterisk: (value) => `/* ${value} */`,
   MultiPound: (value) => multilineFormatter(value, '#'),
   StarParen: (value) => `(* ${value} *)`,
 }
