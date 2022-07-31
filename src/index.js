@@ -135,7 +135,7 @@ comment.jsx = jsxFormatter
 
 comment.ada = {
   single: (value) => `-- ${value}`,
-  multi: multilineFormatter(value, '--'),
+  multi: (value) => multilineFormatter(value, '--'),
 }
 
 comment.batch = {
@@ -160,7 +160,7 @@ comment.delphi = {
 
 comment.erlang = {
   single: (value) => `% ${value}`,
-  multi: multilineFormatter(value, '%'),
+  multi: (value) => multilineFormatter(value, '%'),
 }
 
 comment.euphoria = {
@@ -170,7 +170,7 @@ comment.euphoria = {
 
 comment.fortran = {
   single: (value) => `! ${value}`,
-  multi: multilineFormatter(value, '!'),
+  multi: (value) => multilineFormatter(value, '!'),
 }
 
 comment.fSharp = {
@@ -185,12 +185,12 @@ comment.genie = {
 
 comment.haskell = {
   single: (value) => `-- ${value}`,
-  multi: multilineFormatter(value, '--'),
+  multi: (value) => multilineFormatter(value, '--'),
 }
 
 comment.icon = {
   single: CommonFormatter.Pound,
-  multi: multilineFormatter(value, '#'),
+  multi: (value) => multilineFormatter(value, '#'),
 }
 
 comment.julia = {
