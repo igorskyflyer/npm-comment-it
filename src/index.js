@@ -48,6 +48,7 @@ const xmlFormatter = require('./formatters/xmlFormatter')
  * @property {CommentFormatter} javaScript JavaScript formatter
  * @property {CommentFormatter} jsx JSX formatter
  * @property {CommentFormatter} kotlin Kotlin formatter
+ * @property {CommentFormatter} lisp Lisp formatter
  * @property {CommentFormatter} liveCode LiveCode formatter
  * @property {CommentFormatter} lua Lua formatter
  * @property {CommentFormatter} maple Maple formatter
@@ -183,6 +184,11 @@ comment.haskell = {
 comment.icon = {
   single: CommonFormatter.Pound,
   multi: multilineFormatter(value, '#'),
+}
+
+comment.lisp = {
+  single: (value) => `; ${value}`,
+  multi: (value) => multilineFormatter(value, ';'),
 }
 
 comment.lua = {
