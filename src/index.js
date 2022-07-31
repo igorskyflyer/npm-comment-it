@@ -39,6 +39,7 @@ const xmlFormatter = require('./formatters/xmlFormatter')
  * @property {CommentFormatter} javaScript JavaScript formatter
  * @property {CommentFormatter} jsx JSX formatter
  * @property {CommentFormatter} kotlin Kotlin formatter
+ * @property {CommentFormatter} liveCode LiveCode formatter
  * @property {CommentFormatter} lua Lua formatter
  * @property {CommentFormatter} maple Maple formatter
  * @property {CommentFormatter} matlab MATLAB formatter
@@ -89,6 +90,7 @@ comment.c =
   comment.java =
   comment.javaScript =
   comment.kotlin =
+  comment.liveCode =
   comment.mql4 =
   comment.objectiveC =
   comment.objectiveCpp =
