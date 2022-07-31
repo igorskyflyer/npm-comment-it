@@ -27,6 +27,7 @@ const xmlFormatter = require('./formatters/xmlFormatter')
  * @property {CommentFormatter} cSharp C# formatter
  * @property {CommentFormatter} coffeeScript CoffeeScript formatter
  * @property {CommentFormatter} cpp C++ formatter
+ * @property {CommentFormatter} crystal Crystal formatter
  * @property {CommentFormatter} css CSS formatter
  * @property {CommentFormatter} dart Dart formatter
  * @property {CommentFormatter} delphi Delphi formatter
@@ -111,7 +112,8 @@ comment.c =
 
 comment.dart = comment.go = doubleSlashFormatter
 
-comment.dockerFile =
+comment.crystal =
+  comment.dockerFile =
   comment.elixir =
   comment.perl =
   comment.python =
