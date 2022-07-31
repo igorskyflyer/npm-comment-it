@@ -216,12 +216,12 @@ comment.matlab = {
 
 comment.mercury = {
   single: CommonFormatter.Percent,
-  multi: (value) => multilineFormatter(value, '% '),
+  multi: (value) => multilineFormatter(value, '%'),
 }
 
 comment.oz = {
   single: CommonFormatter.Percent,
-  multi: (value) => CommonFormatter.SlashAsterisk,
+  multi: CommonFormatter.SlashAsterisk,
 }
 
 comment.pascal = {
