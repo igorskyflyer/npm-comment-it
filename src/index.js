@@ -31,6 +31,7 @@ const xmlFormatter = require('./formatters/xmlFormatter')
  * @property {CommentFormatter} dart Dart formatter
  * @property {CommentFormatter} delphi Delphi formatter
  * @property {CommentFormatter} dockerFile Dockerfile formatter
+ * @property {CommentFormatter} elixir Elixir formatter
  * @property {CommentFormatter} erlang Erlang formatter
  * @property {CommentFormatter} euphoria Euphoria formatter
  * @property {CommentFormatter} fSharp F# formatter
@@ -110,7 +111,14 @@ comment.c =
 
 comment.dart = comment.go = doubleSlashFormatter
 
-comment.dockerFile = comment.perl = comment.python = comment.r = comment.ruby = comment.shellScript = poundFormatter
+comment.dockerFile =
+  comment.elixir =
+  comment.perl =
+  comment.python =
+  comment.r =
+  comment.ruby =
+  comment.shellScript =
+    poundFormatter
 
 comment.html = comment.vueHtml = comment.xml = xmlFormatter
 
