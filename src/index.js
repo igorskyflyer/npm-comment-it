@@ -58,6 +58,7 @@ const xmlFormatter = require('./formatters/xmlFormatter')
  * @property {CommentFormatter} sql SQL formatter
  * @property {CommentFormatter} swift Swift formatter
  * @property {CommentFormatter} typeScript TypeScript formatter
+ * @property {CommentFormatter} vala Vala formatter
  * @property {CommentFormatter} visualBasic VisualBasic formatter
  * @property {CommentFormatter} vue Vue formatter
  * @property {CommentFormatter} vueHtml VueHtml formatter
@@ -100,7 +101,10 @@ comment.html = comment.vueHtml = comment.xml = xmlFormatter
 
 comment.jsx = jsxFormatter
 
-comment.batch = { single: (value) => `REM ${value}`, multi: (value) => multilineFormatter(value, 'REM') }
+comment.batch = {
+  single: (value) => `REM ${value}`,
+  multi: (value) => multilineFormatter(value, 'REM'),
+}
 
 comment.coffeeScript = {
   single: CommonFormatter.Pound,
@@ -150,6 +154,11 @@ comment.pug = {
 
 comment.sql = {
   single: (value) => `-- ${value}`,
+  multi: CommonFormatter.SlashAsterisk,
+}
+
+comment.vala = {
+  single: (value) => CommonFormatter.DoubleSlash,
   multi: CommonFormatter.SlashAsterisk,
 }
 
