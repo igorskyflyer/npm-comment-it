@@ -241,7 +241,7 @@ comment.pug = {
 
 comment.q = {
   single: (value) => `/ ${value}`,
-  multi: (value) => multilineFormatter(value, '/ '),
+  multi: (value) => multilineFormatter(value, '/'),
 }
 
 comment.red = {
@@ -340,6 +340,15 @@ function alias(id, alias) {
 
   return false
 }
+
+console.log(
+  CommonFormatter.ColonMulti(`hello
+
+
+world
+
+this is a test`)
+)
 
 module.exports = {
   comment,
