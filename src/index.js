@@ -35,6 +35,7 @@ const xmlFormatter = require('./formatters/xmlFormatter')
  * @property {CommentFormatter} elixir Elixir formatter
  * @property {CommentFormatter} erlang Erlang formatter
  * @property {CommentFormatter} euphoria Euphoria formatter
+ * @property {CommentFormatter} fortran Fortran formatter
  * @property {CommentFormatter} fSharp F# formatter
  * @property {CommentFormatter} genie Genie formatter
  * @property {CommentFormatter} go Go formatter
@@ -157,6 +158,11 @@ comment.erlang = {
 comment.euphoria = {
   single: (value) => `#! ${value}`,
   multi: CommonFormatter.SlashAsterisk,
+}
+
+comment.fortran = {
+  single: (value) => `! ${value}`,
+  multi: multilineFormatter(value, '!'),
 }
 
 comment.fSharp = {
