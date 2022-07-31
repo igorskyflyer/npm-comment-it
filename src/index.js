@@ -51,6 +51,7 @@ const xmlFormatter = require('./formatters/xmlFormatter')
  * @property {CommentFormatter} python Python formatter
  * @property {CommentFormatter} r R formatter
  * @property {CommentFormatter} razor Razor formatter
+ * @property {CommentFormatter} ring Ring formatter
  * @property {CommentFormatter} ruby Ruby formatter
  * @property {CommentFormatter} rust Rust formatter
  * @property {CommentFormatter} scala Scala formatter
@@ -86,6 +87,7 @@ comment.c =
   comment.objectiveCpp =
   comment.php =
   comment.razor =
+  comment.ring =
   comment.rust =
   comment.scala =
   comment.swift =
