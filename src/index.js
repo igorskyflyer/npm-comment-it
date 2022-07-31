@@ -43,6 +43,7 @@ const xmlFormatter = require('./formatters/xmlFormatter')
  * @property {CommentFormatter} matlab MATLAB formatter
  * @property {CommentFormatter} objectiveC Objective-C formatter
  * @property {CommentFormatter} objectiveCpp Objective-C++ formatter
+ * @property {CommentFormatter} oz Oz formatter
  * @property {CommentFormatter} pascal Pascal formatter
  * @property {CommentFormatter} perl Perl formatter
  * @property {CommentFormatter} php PHP formatter
@@ -139,6 +140,11 @@ comment.matlab = {
   single: (value) => `% ${value}`,
   // requires newlines !
   multi: (value) => `%{\n${value}\n%}`,
+}
+
+comment.oz = {
+  single: (value) => `% ${value}`,
+  multi: (value) => CommonFormatter.SlashAsterisk,
 }
 
 comment.pascal = {
