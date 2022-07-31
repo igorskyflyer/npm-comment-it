@@ -4,7 +4,7 @@
 
 <br>
 
-<h4 align="center">🌍 40 <sup>(*)</sup> languages are currently supported. 🎤</h4>
+<h4 align="center">🌍 61 <sup>(*)</sup> languages are currently supported. 🎤</h4>
 
 <p align="center">
 <sup>* an additional alias is available for <code>shellScript</code> named <code>bash</code>.</sup>
