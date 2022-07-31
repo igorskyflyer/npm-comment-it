@@ -41,6 +41,7 @@ const xmlFormatter = require('./formatters/xmlFormatter')
  * @property {CommentFormatter} kotlin Kotlin formatter
  * @property {CommentFormatter} lua Lua formatter
  * @property {CommentFormatter} matlab MATLAB formatter
+ * @property {CommentFormatter} mercury Mercury formatter
  * @property {CommentFormatter} mql4 MQL4 formatter
  * @property {CommentFormatter} objectiveC Objective-C formatter
  * @property {CommentFormatter} objectiveCpp Objective-C++ formatter
@@ -142,6 +143,11 @@ comment.matlab = {
   single: (value) => `% ${value}`,
   // requires newlines !
   multi: (value) => `%{\n${value}\n%}`,
+}
+
+comment.mercury = {
+  single: (value) => `% ${value}`,
+  multi: (value) => multilineFormatter(value, '% '),
 }
 
 comment.oz = {
