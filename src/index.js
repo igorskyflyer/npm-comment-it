@@ -133,8 +133,13 @@ comment.html = comment.vueHtml = comment.xml = xmlFormatter
 
 comment.jsx = jsxFormatter
 
-comment.ada = {
-  single: (value) => `-- ${value}`,
+comment.genie = comment.vala = {
+  single: (value) => CommonFormatter.DoubleSlash,
+  multi: CommonFormatter.SlashAsterisk,
+}
+
+comment.ada = comment.haskell = {
+  single: CommonFormatter.DoubleDash,
   multi: (value) => multilineFormatter(value, '--'),
 }
 
@@ -159,7 +164,7 @@ comment.delphi = {
 }
 
 comment.erlang = {
-  single: (value) => `% ${value}`,
+  single: CommonFormatter.Percent,
   multi: (value) => multilineFormatter(value, '%'),
 }
 
@@ -178,16 +183,6 @@ comment.fSharp = {
   multi: CommonFormatter.StarParen,
 }
 
-comment.genie = {
-  single: (value) => CommonFormatter.DoubleSlash,
-  multi: CommonFormatter.SlashAsterisk,
-}
-
-comment.haskell = {
-  single: (value) => `-- ${value}`,
-  multi: (value) => multilineFormatter(value, '--'),
-}
-
 comment.icon = {
   single: CommonFormatter.Pound,
   multi: (value) => multilineFormatter(value, '#'),
@@ -199,12 +194,12 @@ comment.julia = {
 }
 
 comment.lisp = {
-  single: (value) => `; ${value}`,
-  multi: (value) => multilineFormatter(value, ';'),
+  single: CommonFormatter.ColonSingle,
+  multi: CommonFormatter.ColonMulti,
 }
 
 comment.lua = {
-  single: (value) => `-- ${value}`,
+  single: CommonFormatter.DoubleDash,
   multi: (value) => `--[[ ${value} --]]`,
 }
 
@@ -214,18 +209,18 @@ comment.maple = {
 }
 
 comment.matlab = {
-  single: (value) => `% ${value}`,
+  single: CommonFormatter.Percent,
   // requires newlines !
   multi: (value) => `%{\n${value}\n%}`,
 }
 
 comment.mercury = {
-  single: (value) => `% ${value}`,
+  single: CommonFormatter.Percent,
   multi: (value) => multilineFormatter(value, '% '),
 }
 
 comment.oz = {
-  single: (value) => `% ${value}`,
+  single: CommonFormatter.Percent,
   multi: (value) => CommonFormatter.SlashAsterisk,
 }
 
@@ -250,17 +245,12 @@ comment.q = {
 }
 
 comment.red = {
-  single: (value) => `; ${value}`,
-  multi: (value) => multilineFormatter(value, ';'),
+  single: CommonFormatter.ColonSingle,
+  multi: CommonFormatter.ColonMulti,
 }
 
 comment.sql = {
-  single: (value) => `-- ${value}`,
-  multi: CommonFormatter.SlashAsterisk,
-}
-
-comment.vala = {
-  single: (value) => CommonFormatter.DoubleSlash,
+  single: CommonFormatter.DoubleDash,
   multi: CommonFormatter.SlashAsterisk,
 }
 
