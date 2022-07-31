@@ -51,6 +51,7 @@ const xmlFormatter = require('./formatters/xmlFormatter')
  * @property {CommentFormatter} python Python formatter
  * @property {CommentFormatter} r R formatter
  * @property {CommentFormatter} razor Razor formatter
+ * @property {CommentFormatter} red Red formatter
  * @property {CommentFormatter} ring Ring formatter
  * @property {CommentFormatter} ruby Ruby formatter
  * @property {CommentFormatter} rust Rust formatter
@@ -152,6 +153,11 @@ comment.powerShell = {
 comment.pug = {
   single: (value) => `//- ${value}`,
   multi: (value) => `//-\n${multilineFormatter(value, '\t', true)}`,
+}
+
+comment.red = {
+  single: (value) => `; ${value}`,
+  multi: (value) => multilineFormatter(value, ';'),
 }
 
 comment.sql = {
