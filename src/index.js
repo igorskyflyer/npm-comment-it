@@ -21,6 +21,7 @@ const xmlFormatter = require('./formatters/xmlFormatter')
 
 /**
  * @typedef {Object} BuiltInFormatters
+ * @property {CommentFormatter} ada Ada formatter
  * @property {CommentFormatter} bash ShellScript/Bash formatter
  * @property {CommentFormatter} batch Batch formatter
  * @property {CommentFormatter} c C formatter
@@ -130,6 +131,11 @@ comment.crystal =
 comment.html = comment.vueHtml = comment.xml = xmlFormatter
 
 comment.jsx = jsxFormatter
+
+comment.ada = {
+  single: (value) => `-- ${value}`,
+  multi: multilineFormatter(value, '--'),
+}
 
 comment.batch = {
   single: (value) => `REM ${value}`,
