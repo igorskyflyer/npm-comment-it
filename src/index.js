@@ -25,6 +25,7 @@ const xmlFormatter = require('./formatters/xmlFormatter')
  * @property {CommentFormatter} bash ShellScript/Bash formatter
  * @property {CommentFormatter} batch Batch formatter
  * @property {CommentFormatter} c C formatter
+ * @property {CommentFormatter} carbon Carbon formatter
  * @property {CommentFormatter} cSharp C# formatter
  * @property {CommentFormatter} coffeeScript CoffeeScript formatter
  * @property {CommentFormatter} cpp C++ formatter
@@ -146,6 +147,11 @@ comment.ada = comment.haskell = {
 comment.batch = {
   single: (value) => `REM ${value}`,
   multi: (value) => multilineFormatter(value, 'REM'),
+}
+
+comment.carbon = {
+  single: (value) => CommonFormatter.DoubleSlash,
+  multi: (value) => multilineFormatter(value, '//'),
 }
 
 comment.coffeeScript = {
