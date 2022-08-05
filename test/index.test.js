@@ -36,7 +36,7 @@ this is a test`
 
 describe('🧪 CommentIt! tests 🧪', () => {
   describe('single()', () => {
-    it('C, C#, C++, Groovy, Hack, Java, JavaScript, Kotlin, LiveCode, MQL4, Objective-C, Objective-C++, PHP, Razor, Ring, Rust, Scala, Swift, TypeScript, Vue', () => {
+    it('C, Carbon, C#, C++, Groovy, Hack, Java, JavaScript, Kotlin, LiveCode, MQL4, Objective-C, Objective-C++, PHP, Razor, Ring, Rust, Scala, Swift, TypeScript, Vue', () => {
       chai.equal(cStyleFormatter.single(singleLine), `// ${singleLine}`)
     }) // cStyleFormatter
 
@@ -122,7 +122,7 @@ describe('🧪 CommentIt! tests 🧪', () => {
       chai.equal(cStyleFormatter.multi(multiLine), cStyleResult)
     }) // cStyleFormatter
 
-    it('Dart, Go', () => {
+    it('Carbon, Dart, Go', () => {
       chai.equal(doubleSlashFormatter.multi(multiLine), doubleSlashResult)
     }) // doubleSlashFormatter
 
