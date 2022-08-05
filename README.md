@@ -4,7 +4,7 @@
 
 <br>
 
-<h4 align="center">🌍 61 <sup>(*)</sup> languages are currently supported. 🎤</h4>
+<h4 align="center">🌍 62 <sup>(*)</sup> languages are currently supported, even <a href="https://github.com/carbon-language/carbon-lang">Carbon</a>, an upcoming C++ successor made by Google. 🎤</h4>
 
 <p align="center">
 <sup>* an additional alias is available for <code>shellScript</code> named <code>bash</code>.</sup>
@@ -56,7 +56,7 @@ supportsLanguage(id: string): boolean
 
 Returns whether the given language formatter is supported, **case-insensitive**.
 
-Supported identifiers are: **`ada`**,**`bash`**,**`batch`**,**`c`**,**`cSharp`**,**`coffeeScript`**,**`cpp`**,**`crystal`**,**`css`**,**`dart`**,**`delphi`**,**`dockerFile`**,**`elixir`**,**`erlang`**,**`euphoria`**,**`fSharp`**,**`fortran`**,**`genie`**,**`go`**,**`groovy`**,**`hack`**,**`haskell`**,**`html`**,**`icon`**,**`java`**,**`javaScript`**,**`jsx`**,**`julia`**,**`kotlin`**,**`lisp`**,**`liveCode`**,**`lua`**,**`maple`**,**`matlab`**,**`mercury`**,**`mql4`**,**`objectiveC`**,**`objectiveCpp`**,**`oz`**,**`pascal`**,**`perl`**,**`php`**,**`powerShell`**,**`pug`**,**`python`**,**`q`**,**`r`**,**`razor`**,**`red`**,**`ring`**,**`ruby`**,**`rust`**,**`scala`**,**`shellScript`**,**`sql`**,**`swift`**,**`typeScript`**,**`vala`**,**`visualBasic`**,**`vue`**,**`vueHtml`**,**`xml`**.
+Supported identifiers are: **`ada`**,**`bash`**,**`batch`**,**`c`**,**`carbon`**,**`cSharp`**,**`coffeeScript`**,**`cpp`**,**`crystal`**,**`css`**,**`dart`**,**`delphi`**,**`dockerFile`**,**`elixir`**,**`erlang`**,**`euphoria`**,**`fSharp`**,**`fortran`**,**`genie`**,**`go`**,**`groovy`**,**`hack`**,**`haskell`**,**`html`**,**`icon`**,**`java`**,**`javaScript`**,**`jsx`**,**`julia`**,**`kotlin`**,**`lisp`**,**`liveCode`**,**`lua`**,**`maple`**,**`matlab`**,**`mercury`**,**`mql4`**,**`objectiveC`**,**`objectiveCpp`**,**`oz`**,**`pascal`**,**`perl`**,**`php`**,**`powerShell`**,**`pug`**,**`python`**,**`q`**,**`r`**,**`razor`**,**`red`**,**`ring`**,**`ruby`**,**`rust`**,**`scala`**,**`shellScript`**,**`sql`**,**`swift`**,**`typeScript`**,**`vala`**,**`visualBasic`**,**`vue`**,**`vueHtml`**,**`xml`**.
 
 <br>
 
@@ -84,6 +84,7 @@ An `object` where all formatters are stored.
 - **`comment.bash`** - Bash (alias of `shellScript`)
 - **`comment.batch`** - Batch
 - **`comment.c`** - C
+- **`comment.carbon`** - Carbon
 - **`comment.cSharp`** - C#
 - **`comment.coffeeScript`** - CoffeeScript
 - **`comment.cpp`** - C++
