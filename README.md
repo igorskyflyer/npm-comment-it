@@ -12,6 +12,14 @@
 
 <br>
 
+<div align="center">
+	<h3>💖 Support further development</h3>
+	<a href="https://ko-fi.com/igorskyflyer" target="_blank"><img src="https://raw.githubusercontent.com/igorskyflyer/igorskyflyer/main/assets/ko-fi.png" alt="Donate to igorskyflyer" width="108"></a>
+</div>
+
+<br>
+<br>
+
 ✨Since version `2.0.0` `CommentIt!` is a hybrid module that supports both CommonJS (legacy) and ES modules, thanks to [Modern Module](https://github.com/igorskyflyer/npm-modern-module).
 
 <br>
