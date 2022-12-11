@@ -1,7 +1,7 @@
 {
 	"name": "@igor.dvlpr/comment-it",
 	"description": "📜 Formats the provided string as a comment, either a single or a multi line comment for the given programming language. 40 languages are currently supported. 💻",
-	"version": "2.2.0",
+	"version": "2.2.1",
 	"engines": {
 		"node": ">=12.17"
 	},
@@ -37,7 +37,8 @@
 		"igor.dvlpr",
 		"utility"
 	],
-	"author": "Igor Dimitrijević",
+	"author": "Igor Dimitrijević <admin@igorskyflyer.me> (https://github.com/igorskyflyer)",
+	"funding": "https://ko-fi.com/igorskyflyer",
 	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/igorskyflyer/npm-comment-it/issues"
@@ -47,8 +48,8 @@
 		"@types/node": "^12.17.0",
 		"@types/chai": "^4.3.1",
 		"@types/mocha": "^9.1.1",
-		"chai": "^4.3.6",
-		"mocha": "^10.0.0",
+		"chai": "^4.3.7",
+		"mocha": "^10.1.0",
 		"typescript": "^4.7.4"
 	},
 	"dependencies": {
