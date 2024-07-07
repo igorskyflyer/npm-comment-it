@@ -1,6 +1,6 @@
 {
   "name": "@igor.dvlpr/comment-it",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "📜 Formats the provided string as a comment, either a single or a multi line comment for the given programming language. 💻",
   "sideEffects": false,
   "engines": {
