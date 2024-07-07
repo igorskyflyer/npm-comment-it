@@ -2,7 +2,7 @@
 
 <br>
 
-📜 Formats the provided string as a comment, either a single or a multi line comment for the given programming language. 40 languages are currently supported. 💻
+📜 Formats the provided string as a comment, either a single or a multi line comment for the given programming language. 💻
 
 <br>
 
