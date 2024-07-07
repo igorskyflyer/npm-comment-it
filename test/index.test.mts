@@ -52,7 +52,7 @@ describe('🧪 CommentIt! tests 🧪', () => {
       assert.equal(doubleSlashFormatter.single(singleLine), `// ${singleLine}`)
     }) // doubleSlashFormatter
 
-    test('Crystal, Dockerfile, Elixir, Perl, Python, R, Ruby, ShellScript', () => {
+    test('Bash, Crystal, Dockerfile, Elixir, Perl, Python, R, Ruby', () => {
       assert.equal(poundFormatter.single(singleLine), `# ${singleLine}`)
     }) // poundFormatter
 
@@ -134,7 +134,7 @@ describe('🧪 CommentIt! tests 🧪', () => {
       assert.equal(doubleSlashFormatter.multi(multiLine), doubleSlashResult)
     }) // doubleSlashFormatter
 
-    test('Crystal, Dockerfile, Elixir, Perl, Python, R, Ruby, ShellScript', () => {
+    test('Bash, Crystal, Dockerfile, Elixir, Perl, Python, R, Ruby', () => {
       assert.equal(poundFormatter.multi(multiLine), poundResult)
     }) // poundFormatter
 
@@ -229,7 +229,7 @@ describe('🧪 CommentIt! tests 🧪', () => {
 
   suite('language()', () => {
     test('should return true', () => {
-      assert.isObject(language('shellscript'))
+      assert.isObject(language('bash'))
     })
 
     test('should return true', () => {
