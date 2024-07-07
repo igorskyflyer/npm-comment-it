@@ -86,7 +86,7 @@ Supported identifiers are: **`ada`**,**`bash`**,**`batch`**,**`c`**,**`carbon`**
 #### alias()
 
 ```ts
- alias(id: LanguageId, alias: string): boolean
+ alias(id: CommentLanguage, alias: string): boolean
 ```
 
 Adds an alias for an existing comment formatter. Returns true upon success, false otherwise.
