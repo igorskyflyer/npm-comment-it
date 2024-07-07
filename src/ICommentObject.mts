@@ -5,7 +5,7 @@ import type { CommentFormatter } from './CommentFormatter.mjs'
 export interface ICommentObjectBase {
   /** Ada formatter */
   ada: CommentFormatter
-  /** ShellScript/Bash formatter */
+  /** Bash formatter */
   bash: CommentFormatter
   /** Batch formatter */
   batch: CommentFormatter
@@ -111,7 +111,9 @@ export interface ICommentObjectBase {
   rust: CommentFormatter
   /** Scala formatter */
   scala: CommentFormatter
-  /** ShellScript/Bash formatter */
+  /** ShellScript/Bash formatter
+   * @deprecated Use Bash formatter instead
+   */
   shellScript: CommentFormatter
   /** SQL formatter */
   sql: CommentFormatter
