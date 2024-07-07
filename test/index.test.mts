@@ -255,5 +255,13 @@ describe('🧪 CommentIt! tests 🧪', () => {
       // can't overwrite an existing formatter
       assert.isFalse(alias('javaScript', 'jsx'))
     })
+
+    test('should return true', () => {
+      const oldCount: number = getLanguageIds().length
+      alias('javaScript', 'foo')
+      const newCount: number = getLanguageIds().length
+
+      assert.equal(newCount - oldCount, 1)
+    })
   }) // alias()
 })
