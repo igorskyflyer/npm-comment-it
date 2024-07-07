@@ -1,11 +1,9 @@
-const { CommonFormatter, multilineFormatter } = require('./commonFormatters')
+// Author: Igor Dimitrijević (@igorskyflyer)
 
-module.exports = {
+import type { CommentFormatter } from '../CommentFormatter.mjs'
+import { CommonFormatter, MultilineFormatter } from './CommonFormatters.mjs'
+
+export const DoubleSlashFormatter: CommentFormatter = {
   single: CommonFormatter.DoubleSlash,
-  /**
-   *
-   * @param {string} value
-   * @returns {string}
-   */
-  multi: (value) => multilineFormatter(value, '//'),
+  multi: (value: string): string => MultilineFormatter(value, '//')
 }
