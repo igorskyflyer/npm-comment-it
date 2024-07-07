@@ -45,6 +45,7 @@ comment.crystal =
   comment.r =
   comment.ruby =
   comment.shellScript =
+  comment.bash =
     poundFormatter
 
 comment.html = comment.vueHtml = comment.xml = xmlFormatter
@@ -182,6 +183,3 @@ comment.visualBasic = {
   single: (value: string): string => `' ${value}`,
   multi: (value: string): string => multilineFormatter(value, "'")
 }
-
-// Aliases
-comment.bash = comment.shellScript
