@@ -1,21 +1,23 @@
-/**
- *
- * @param {string} value
- * @param {string} prefix
- * @returns {string}
- */
-const multilineFormatter = (value, prefix, spaceNewlines = false) => {
-  const lines = value.split(/[\r*\n]{1}/gm)
-  const count = lines.length
-  let result = ''
+// Author: Igor Dimitrijević (@igorskyflyer)
+
+import type { CommentTransform } from '../CommentTransform.mjs'
+
+export const MultilineFormatter = (
+  value: string,
+  prefix: string,
+  spaceNewlines = false
+): string => {
+  const lines: string[] = value.split(/[\r*\n]{1}/gm)
+  const count: number = lines.length
+  let result: string = ''
 
   if (count === 0) {
     return ''
   }
 
   for (let i = 0; i < count; i++) {
-    const line = lines[i]
-    let space = ' '
+    const line: string = lines[i]
+    let space: string = ' '
 
     if (!spaceNewlines && line === '') {
       space = ''
@@ -27,19 +29,14 @@ const multilineFormatter = (value, prefix, spaceNewlines = false) => {
   return result
 }
 
-/**
- * @type {Object.<string, import('../index.js').CommentTransform>}
- */
-const CommonFormatter = {
-  ColonMulti: (value) => multilineFormatter(value, ';'),
-  ColonSingle: (value) => `; ${value}`,
-  DoubleDash: (value) => `-- ${value}`,
-  DoubleSlash: (value) => `// ${value}`,
-  Percent: (value) => `% ${value}`,
-  Pound: (value) => `# ${value}`,
-  SlashAsterisk: (value) => `/* ${value} */`,
-  MultiPound: (value) => multilineFormatter(value, '#'),
-  StarParen: (value) => `(* ${value} *)`,
+export const CommonFormatter: { [key: string]: CommentTransform } = {
+  ColonMulti: (value: string): string => MultilineFormatter(value, ';'),
+  ColonSingle: (value: string): string => `; ${value}`,
+  DoubleDash: (value: string): string => `-- ${value}`,
+  DoubleSlash: (value: string): string => `// ${value}`,
+  Percent: (value: string): string => `% ${value}`,
+  Pound: (value: string): string => `# ${value}`,
+  SlashAsterisk: (value: string): string => `/* ${value} */`,
+  MultiPound: (value: string): string => MultilineFormatter(value, '#'),
+  StarParen: (value: string): string => `(* ${value} *)`
 }
-
-module.exports = { CommonFormatter, multilineFormatter }
