@@ -2,7 +2,7 @@
 
 import { findMatch, strIsIn } from '@igor.dvlpr/str-is-in'
 
-import cStyleFormatter from './formatters/'
+import cStyleFormatter from './formatters/cStyleFormatter'
 import {
   CommonFormatter,
   multilineFormatter
