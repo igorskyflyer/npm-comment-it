@@ -1,6 +1,8 @@
 # /\* CommentIt! \*/
 
-📜 Formats the provided string as a comment, either a single or a multi line comment for the given programming language. 💻
+<br>
+
+📜 Formats the provided string as a comment, either a single or a multi line comment for the given programming language. 40 languages are currently supported. 💻
 
 <br>
 
@@ -11,22 +13,34 @@
 </p>
 
 <br>
+<br>
 
 <div align="center">
-	<h3>💖 Support further development</h3>
-	<a href="https://ko-fi.com/igorskyflyer" target="_blank"><img src="https://raw.githubusercontent.com/igorskyflyer/igorskyflyer/main/assets/ko-fi.png" alt="Donate to igorskyflyer" width="108"></a>
+	<blockquote>
+		<br>
+		<h4>💖 Support further development</h4>
+		<span>I work hard for every project, including this one and your support means a lot to me!
+		<br>
+		Consider buying me a coffee. ☕
+		<br>
+		<strong>Thank you for supporting my efforts! 🙏😊</strong></span>
+		<br>
+		<br>
+		<a href="https://ko-fi.com/igorskyflyer" target="_blank"><img src="https://raw.githubusercontent.com/igorskyflyer/igorskyflyer/main/assets/ko-fi.png" alt="Donate to igorskyflyer" width="150"></a>
+		<br>
+		<br>
+		<a href="https://github.com/igorskyflyer"><em>@igorskyflyer</em></a>
+		<br>
+		<br>
+		<br>
+	</blockquote>
 </div>
 
 <br>
-<br>
 
-✨Since version `2.0.0` `CommentIt!` is a hybrid module that supports both CommonJS (legacy) and ES modules, thanks to [Modern Module](https://github.com/igorskyflyer/npm-modern-module).
+## 🕵🏼 Usage
 
-<br>
-
-### Usage
-
-Install it by running,
+Install it by executing:
 
 ```shell
 npm i "@igor.dvlpr/comment-it"
@@ -34,7 +48,8 @@ npm i "@igor.dvlpr/comment-it"
 
 <br>
 
-### API
+## 🤹🏼 API
+
 
 #### getLanguageIds()
 
@@ -151,7 +166,8 @@ An `object` where all formatters are stored.
 - **`comment.vue`** - Vue
 - **`comment.vueHtml`** - VueHtml
 - **`comment.xml`** - XML
-  <br>
+
+<br>
 
 Each formatter exposes two functions, `single()` for single-line comments and `multi()` for multi-line comments.
 
@@ -180,10 +196,11 @@ Returns a multi-line comment formatted for the selected language.
 
 ### Examples
 
-```js
-const { comment, supportsLanguage } = require('@igor.dvlpr/comment-it')
-const singleLine = 'hello world'
-const multiLine = `hello
+```ts
+import { comment, supportsLanguage } from '@igor.dvlpr/comment-it'
+
+const singleLine: string = 'hello world'
+const multiLine: string = `hello
 
 
 world
@@ -202,3 +219,40 @@ console.log(supportsLanguage('lua')) // prints true
 console.log(supportsLanguage('TYPEscript')) // prints true
 console.log(supportsLanguage('foo')) // prints false
 ```
+
+---
+
+## 🪪 License
+
+Licensed under the MIT license which is available here, [MIT license](https://github.com/igorskyflyer/npm-comment-it/blob/main/LICENSE).
+
+---
+
+## 🧬 Related
+
+[@igor.dvlpr/mapped-replacer](https://www.npmjs.com/package/@igor.dvlpr/mapped-replacer)
+
+> _🗺 Zero-dependency Map and RegExp based string replacer with Unicode support. 🍁_
+
+[@igor.dvlpr/jmap](https://www.npmjs.com/package/@igor.dvlpr/jmap)
+
+> _🕶️ Reads a JSON file into a Map. 🌻_
+
+[@igor.dvlpr/strip-html-headings](https://www.npmjs.com/package/@igor.dvlpr/strip-html-headings)
+
+> _🍛 Strips HTML headings! 🍤_
+
+[@igor.dvlpr/strip-headings](https://www.npmjs.com/package/@igor.dvlpr/strip-headings)
+
+> _⛸ Strips Markdown headings! 🏹_
+
+[@igor.dvlpr/unc-path](https://www.npmjs.com/package/@igor.dvlpr/unc-path)
+
+> _🥽 Provides ways of parsing UNC paths and checking whether they are valid. 🎱_
+
+<br>
+<br>
+
+>
+> Provided by **Igor Dimitrijević** ([*@igorskyflyer*](https://github.com/igorskyflyer/)).
+>
