@@ -4,11 +4,20 @@
 
 <br>
 
+## v3.1.0
+
+<p align="right"><em>08-Jul-2024</em></p>
+
+- **✅ fix**: remove the deprecated `ShellScript` formatter, use the `Bash` formatter instead
+
+<br>
+<br>
+
 ## v3.0.1
 
 <p align="right"><em>08-Jul-2024</em></p>
 
-- **💻 dev**: deprecate `ShellScript` in favor of `Bash`  
+- **💻 dev**: deprecate `ShellScript` in favor of `Bash`
 
 <br>
 
