@@ -1,3 +1,5 @@
+// Author: Igor Dimitrijević (@igorskyflyer)
+
 import type { ICommentObject } from './ICommentObject.mjs'
 import { CStyleFormatter } from './formatters/CStyleFormatter.mjs'
 import {
