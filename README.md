@@ -8,10 +8,6 @@
 
 <h4 align="center">🌍 62 <sup>(*)</sup> languages are currently supported, even <a href="https://github.com/carbon-language/carbon-lang">Carbon</a>,<br> an upcoming C++ successor made by Google 🎤</h4>
 
-<p align="center">
-<sup>* an additional alias is available for <code>shellScript</code> named <code>bash</code>.</sup>
-</p>
-
 <br>
 <br>
 
@@ -104,7 +100,7 @@ An `object` where all formatters are stored.
 `comment`'s properties/formatters:
 
 - **`comment.ada`** - Ada
-- **`comment.bash`** - Bash (alias of `shellScript`)
+- **`comment.bash`** - Bash
 - **`comment.batch`** - Batch
 - **`comment.c`** - C
 - **`comment.carbon`** - Carbon
@@ -157,7 +153,6 @@ An `object` where all formatters are stored.
 - **`comment.ruby`** - Ruby
 - **`comment.rust`** - Rust
 - **`comment.scala`** - Scala
-- **`comment.shellScript`** - ShellScript/Bash
 - **`comment.sql`** - SQL
 - **`comment.swift`** - Swift
 - **`comment.typeScript`** - TypeScript
