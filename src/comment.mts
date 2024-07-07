@@ -44,7 +44,6 @@ comment.crystal =
   comment.python =
   comment.r =
   comment.ruby =
-  comment.shellScript =
   comment.bash =
     poundFormatter
 
