@@ -1,9 +1,9 @@
 // Author: Igor Dimitrijević (@igorskyflyer)
 
 import type { CommentFormatter } from '../CommentFormatter.mjs'
-import { CommonFormatter } from './CommonFormatters.mjs'
+import { commonFormatter } from './commonFormatters.mjs'
 
-export const PoundFormatter: CommentFormatter = {
-  single: CommonFormatter.Pound,
-  multi: CommonFormatter.MultiPound
+export const poundFormatter: CommentFormatter = {
+  single: commonFormatter.Pound,
+  multi: commonFormatter.MultiPound
 }
