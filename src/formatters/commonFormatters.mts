@@ -2,7 +2,7 @@
 
 import type { CommentTransform } from '../CommentTransform.mjs'
 
-export const MultilineFormatter = (
+export const multilineFormatter = (
   value: string,
   prefix: string,
   spaceNewlines = false
@@ -29,14 +29,14 @@ export const MultilineFormatter = (
   return result
 }
 
-export const CommonFormatter: { [key: string]: CommentTransform } = {
-  ColonMulti: (value: string): string => MultilineFormatter(value, ';'),
+export const commonFormatter: { [key: string]: CommentTransform } = {
+  ColonMulti: (value: string): string => multilineFormatter(value, ';'),
   ColonSingle: (value: string): string => `; ${value}`,
   DoubleDash: (value: string): string => `-- ${value}`,
   DoubleSlash: (value: string): string => `// ${value}`,
   Percent: (value: string): string => `% ${value}`,
   Pound: (value: string): string => `# ${value}`,
   SlashAsterisk: (value: string): string => `/* ${value} */`,
-  MultiPound: (value: string): string => MultilineFormatter(value, '#'),
+  MultiPound: (value: string): string => multilineFormatter(value, '#'),
   StarParen: (value: string): string => `(* ${value} *)`
 }
