@@ -153,7 +153,6 @@ An `object` where all formatters are stored.
 - **`comment.ruby`** - Ruby
 - **`comment.rust`** - Rust
 - **`comment.scala`** - Scala
-- **`comment.shellScript`** - ShellScript/Bash (**deprecated**)
 - **`comment.sql`** - SQL
 - **`comment.swift`** - Swift
 - **`comment.typeScript`** - TypeScript
