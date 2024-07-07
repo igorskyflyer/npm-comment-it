@@ -6,7 +6,7 @@
 
 <br>
 
-<h4 align="center">🌍 62 languages are currently supported, even <a href="https://github.com/carbon-language/carbon-lang">Carbon</a>,<br> an upcoming C++ successor made by Google 🎤</h4>
+<h4 align="center">🌍 62 languages are currently supported - even <a href="https://github.com/carbon-language/carbon-lang">Carbon</a>,<br> an upcoming C++ successor made by Google 🎤</h4>
 
 <br>
 <br>
