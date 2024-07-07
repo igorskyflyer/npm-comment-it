@@ -101,7 +101,7 @@ An `object` where all formatters are stored.
 
 <br>
 
-`comment`'s formatters:
+`comment`'s properties/formatters:
 
 - **`comment.ada`** - Ada
 - **`comment.bash`** - Bash (alias of `shellScript`)
