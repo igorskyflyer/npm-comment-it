@@ -36,7 +36,7 @@
     "url": "https://github.com/igorskyflyer/npm-comment-it/issues"
   },
   "dependencies": {
-    "@igor.dvlpr/str-is-in": "^3.0.0"
+    "@igor.dvlpr/str-is-in": "^3.0.2"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",
