@@ -213,7 +213,7 @@ describe('🧪 CommentIt! tests 🧪', () => {
     })
 
     test('should return true', () => {
-      assert.isTrue(supportsLanguage('typescript'))
+      assert.isTrue(supportsLanguage('TYPEscript'))
     })
 
     test('should return false', () => {
