@@ -6,7 +6,7 @@
 
 <br>
 
-<h4 align="center">🌍 62 <sup>(*)</sup> languages are currently supported, even <a href="https://github.com/carbon-language/carbon-lang">Carbon</a>, an upcoming C++ successor made by Google. 🎤</h4>
+<h4 align="center">🌍 62 <sup>(*)</sup> languages are currently supported, even <a href="https://github.com/carbon-language/carbon-lang">Carbon</a>, an upcoming C++ successor made by Google 🎤</h4>
 
 <p align="center">
 <sup>* an additional alias is available for <code>shellScript</code> named <code>bash</code>.</sup>
