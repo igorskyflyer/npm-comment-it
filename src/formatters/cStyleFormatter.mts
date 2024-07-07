@@ -1,9 +1,8 @@
-/**
- * @type {Object.<string, import('../index.js').CommentTransform>}
- */
-const cStyleFormatter = {
-  single: (value) => `// ${value}`,
-  multi: (value) => `/* ${value} */`,
-}
+// Author: Igor Dimitrijević (@igorskyflyer)
 
-module.exports = cStyleFormatter
+import type { CommentFormatter } from '../CommentFormatter.mjs'
+
+export const CStyleFormatter: CommentFormatter = {
+  single: (value: string): string => `// ${value}`,
+  multi: (value: string): string => `/* ${value} */`
+}
