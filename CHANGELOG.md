@@ -9,3 +9,4 @@
 <p align="right"><em>07-Jul-2024</em></p>
 
 - **💻 dev**: migrate to TypeScript and ESM-only
+- **💻 dev**: upgrade dependencies
