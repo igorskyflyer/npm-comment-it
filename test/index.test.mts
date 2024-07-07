@@ -1,12 +1,12 @@
 // Author: Igor Dimitrijević (@igorskyflyer)
 
 import { assert, describe, suite, test } from 'vitest'
-import { CStyleFormatter } from '../src/formatters/CStyleFormatter.mjs'
-import { CommonFormatter } from '../src/formatters/CommonFormatters.mjs'
-import { DoubleSlashFormatter } from '../src/formatters/DoubleSlashFormatter.mjs'
-import { JsxFormatter } from '../src/formatters/JsxFormatter.mjs'
-import { PoundFormatter } from '../src/formatters/PoundFormatter.mjs'
-import { XmlFormatter } from '../src/formatters/XmlFormatter.mjs'
+import { cStyleFormatter } from '../src/formatters/cStyleFormatter.mjs'
+import { commonFormatter } from '../src/formatters/commonFormatters.mts'
+import { doubleSlashFormatter } from '../src/formatters/doubleSlashFormatter.mjs'
+import { jsxFormatter } from '../src/formatters/jsxFormatter.mts'
+import { poundFormatter } from '../src/formatters/poundFormatter.mts'
+import { xmlFormatter } from '../src/formatters/xmlFormatter.mts'
 import {
   alias,
   comment,
@@ -45,24 +45,24 @@ this is a test`
 describe('🧪 CommentIt! tests 🧪', () => {
   suite('single()', () => {
     test('C, Carbon, C#, C++, Groovy, Hack, Java, JavaScript, Kotlin, LiveCode, MQL4, Objective-C, Objective-C++, PHP, Razor, Ring, Rust, Scala, Swift, TypeScript, Vue', () => {
-      assert.equal(CStyleFormatter.single(singleLine), `// ${singleLine}`)
-    }) // CStyleFormatter
+      assert.equal(cStyleFormatter.single(singleLine), `// ${singleLine}`)
+    }) // cStyleFormatter
 
     test('Dart, Go', () => {
-      assert.equal(DoubleSlashFormatter.single(singleLine), `// ${singleLine}`)
-    }) // DoubleSlashFormatter
+      assert.equal(doubleSlashFormatter.single(singleLine), `// ${singleLine}`)
+    }) // doubleSlashFormatter
 
     test('Crystal, Dockerfile, Elixir, Perl, Python, R, Ruby, ShellScript', () => {
-      assert.equal(PoundFormatter.single(singleLine), `# ${singleLine}`)
-    }) // PoundFormatter
+      assert.equal(poundFormatter.single(singleLine), `# ${singleLine}`)
+    }) // poundFormatter
 
     test('JSX', () => {
-      assert.equal(JsxFormatter.single(singleLine), `{/* ${singleLine} */}`)
-    }) // JsxFormatter
+      assert.equal(jsxFormatter.single(singleLine), `{/* ${singleLine} */}`)
+    }) // jsxFormatter
 
     test('HTML, Vue-HTML, XML', () => {
-      assert.equal(XmlFormatter.single(singleLine), `<!-- ${singleLine} -->`)
-    }) // XmlFormatter
+      assert.equal(xmlFormatter.single(singleLine), `<!-- ${singleLine} -->`)
+    }) // xmlFormatter
 
     test('Batch', () => {
       assert.equal(comment.batch.single(singleLine), `REM ${singleLine}`)
@@ -127,28 +127,28 @@ describe('🧪 CommentIt! tests 🧪', () => {
 
   suite('multi()', () => {
     test('C, C#, C++, Groovy, Hack, Java, JavaScript, Kotlin, LiveCode, MQL4, Objective-C, Objective-C++, PHP, Razor, Ring, Rust, Scala, Swift, TypeScript, Vue', () => {
-      assert.equal(CStyleFormatter.multi(multiLine), cStyleResult)
-    }) // CStyleFormatter
+      assert.equal(cStyleFormatter.multi(multiLine), cStyleResult)
+    }) // cStyleFormatter
 
     test('Carbon, Dart, Go', () => {
-      assert.equal(DoubleSlashFormatter.multi(multiLine), doubleSlashResult)
-    }) // DoubleSlashFormatter
+      assert.equal(doubleSlashFormatter.multi(multiLine), doubleSlashResult)
+    }) // doubleSlashFormatter
 
     test('Crystal, Dockerfile, Elixir, Perl, Python, R, Ruby, ShellScript', () => {
-      assert.equal(PoundFormatter.multi(multiLine), poundResult)
-    }) // PoundFormatter
+      assert.equal(poundFormatter.multi(multiLine), poundResult)
+    }) // poundFormatter
 
     test('JSX', () => {
-      assert.equal(JsxFormatter.multi(multiLine), `{/* ${multiLine} */}`)
-    }) // JsxFormatter
+      assert.equal(jsxFormatter.multi(multiLine), `{/* ${multiLine} */}`)
+    }) // jsxFormatter
 
     test('HTML, Vue-HTML, XML', () => {
-      assert.equal(XmlFormatter.multi(multiLine), `<!--\n${multiLine}\n-->`)
-    }) // XmlFormatter
+      assert.equal(xmlFormatter.multi(multiLine), `<!--\n${multiLine}\n-->`)
+    }) // xmlFormatter
 
     test('Delphi, F#, Maple, Pascal', () => {
-      assert.equal(CommonFormatter.StarParen(multiLine), `(* ${multiLine} *)`)
-    }) // CommonFormatter.StarParen
+      assert.equal(commonFormatter.StarParen(multiLine), `(* ${multiLine} *)`)
+    }) // commonFormatter.StarParen
 
     test('Batch', () => {
       assert.equal(comment.batch.multi(multiLine), batchResult)
