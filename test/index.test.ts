@@ -1,23 +1,23 @@
 // Author: Igor Dimitrijević (@igorskyflyer)
 
 import { assert, describe, suite, test } from 'vitest'
-import { cStyleFormatter } from '../src/formatters/cStyleFormatter.mjs'
-import { commonFormatter } from '../src/formatters/commonFormatters.mts'
-import { doubleSlashFormatter } from '../src/formatters/doubleSlashFormatter.mjs'
-import { jsxFormatter } from '../src/formatters/jsxFormatter.mts'
-import { poundFormatter } from '../src/formatters/poundFormatter.mts'
-import { xmlFormatter } from '../src/formatters/xmlFormatter.mts'
+import { commonFormatter } from '../src/formatters/commonFormatters.js'
+import { cStyleFormatter } from '../src/formatters/cStyleFormatter.js'
+import { doubleSlashFormatter } from '../src/formatters/doubleSlashFormatter.js'
+import { jsxFormatter } from '../src/formatters/jsxFormatter.js'
+import { poundFormatter } from '../src/formatters/poundFormatter.js'
+import { xmlFormatter } from '../src/formatters/xmlFormatter.js'
 import {
   alias,
   comment,
   getLanguageIds,
   language,
   supportsLanguage
-} from '../src/index.mjs'
+} from '../src/index.js'
 import {
   batchResult,
-  cStyleResult,
   coffeeScriptResult,
+  cStyleResult,
   doubleSlashResult,
   fortranResult,
   haskellResult,
@@ -32,7 +32,7 @@ import {
   qResult,
   redResult,
   visualBasicResult
-} from './resources/results.mjs'
+} from './resources/results.js'
 
 const singleLine: string = 'hello world'
 const multiLine: string = `hello
