@@ -1,9 +1,9 @@
 // Author: Igor Dimitrijević (@igorskyflyer)
 
 import { findMatch, strIsIn } from '@igorskyflyer/str-is-in'
+import { comment } from './comment.js'
 import type { CommentFormatter } from './CommentFormatter.js'
 import type { CommentLanguage } from './ICommentObject.js'
-import { comment } from './comment.js'
 
 /**
  * Gets IDs of all available language
