@@ -1,47 +1,65 @@
-# /\* CommentIt! \*/
-
-<br>
-
-📜 Formats the provided string as a comment, either a single or a multi line comment for the given programming language. 💻
-
-<br>
-
-<h4 align="center">🌍 62 languages are currently supported - even <a href="https://github.com/carbon-language/carbon-lang">Carbon</a>,<br> an upcoming C++ successor made by Google 🎤</h4>
-
-<br>
-<br>
-
 <div align="center">
-	<blockquote>
-		<br>
-		<h4>💖 Support further development</h4>
-		<span>I work hard for every project, including this one and your support means a lot to me!
-		<br>
-		Consider buying me a coffee. ☕
-		<br>
-		<strong>Thank you for supporting my efforts! 🙏😊</strong></span>
-		<br>
-		<br>
-		<a href="https://ko-fi.com/igorskyflyer" target="_blank"><img src="https://raw.githubusercontent.com/igorskyflyer/igorskyflyer/main/assets/ko-fi.png" alt="Donate to igorskyflyer" width="150"></a>
-		<br>
-		<br>
-		<a href="https://github.com/igorskyflyer"><em>@igorskyflyer</em></a>
-		<br>
-		<br>
-		<br>
-	</blockquote>
+  <img src="https://raw.githubusercontent.com/igorskyflyer/npm-comment-it/main/media/comment-it.png" alt="Icon of CommentIt!" width="256" height="256">
+  <h1>CommentIt!</h1>
 </div>
 
 <br>
 
+<h4 align="center">
+  📜 Formats the provided string as a comment, either a single or a multi line comment for the given programming language. 💻
+</h4>
+
+<h5 align="center">🌍 62 languages are currently supported - even <a href="https://github.com/carbon-language/carbon-lang">Carbon</a>,<br> an upcoming C++ successor made by Google 🎤</h5>
+
+<br>
+<br>
+
+## 📃 Table of Contents
+
+- [Features](#-features)
+- [Usage](#-usage)
+- [API](#-api)
+- [Examples](#️-examples)
+- [Changelog](#-changelog)
+- [Support](#-support)
+- [License](#-license)
+- [Related](#-related)
+- [Author](#-author)
+
+<br>
+<br>
+
+## 🤖 Features
+
+- 💬 comments out code or strings using each language's native style
+- 🌍 supports tons of languages via dynamic formatter lookup
+- 🔍 finds formatters with fuzzy, case-insensitive matching
+- 🧪 checks if a language is supported before formatting
+- 🏷️ allows custom aliases for formatter reuse
+- 📦 exposes all formatters for direct use or inspection
+- 🔄 handles mixed separators and normalizes input
+- 🚫 rejects invalid or duplicate aliases
+
+<br>
+<br>
+
 ## 🕵🏼 Usage
 
-Install it by executing:
+Install it by executing any of the following, depending on your preferred package manager:
 
-```shell
-npm i "@igor.dvlpr/comment-it"
+```bash
+pnpm add @igorskyflyer/comment-it
 ```
 
+```bash
+yarn add @igorskyflyer/comment-it
+```
+
+```bash
+npm i @igorskyflyer/comment-it
+```
+
+<br>
 <br>
 
 ## 🤹🏼 API
@@ -188,11 +206,13 @@ multi(value: string): string
 Returns a multi-line comment formatted for the selected language.
 
 <br>
+<br>
 
-### Examples
+## 🗒️ Examples
+
 
 ```ts
-import { comment, supportsLanguage } from '@igor.dvlpr/comment-it'
+import { comment, supportsLanguage } from '@igorskyflyer/comment-it'
 
 const singleLine: string = 'hello world'
 const multiLine: string = `hello
@@ -215,39 +235,64 @@ console.log(supportsLanguage('TYPEscript')) // prints true
 console.log(supportsLanguage('foo')) // prints false
 ```
 
----
+<br>
+<br>
+
+## 📝 Changelog
+
+📑 The changelog is available here, [CHANGELOG.md](https://github.com/igorskyflyer/npm-comment-it/blob/main/CHANGELOG.md).
+
+<br>
+<br>
 
 ## 🪪 License
 
 Licensed under the MIT license which is available here, [MIT license](https://github.com/igorskyflyer/npm-comment-it/blob/main/LICENSE).
 
----
+<br>
+<br>
+
+## 💖 Support
+
+<div align="center">
+  I work hard for every project, including this one and your support means a lot to me!
+  <br>
+  Consider buying me a coffee. ☕
+  <br>
+  <br>
+  <a href="https://ko-fi.com/igorskyflyer" target="_blank"><img src="https://raw.githubusercontent.com/igorskyflyer/igorskyflyer/main/assets/ko-fi.png" alt="Donate to igorskyflyer" width="180" height="46"></a>
+  <br>
+  <br>
+  <em>Thank you for supporting my efforts!</em> 🙏😊
+</div>
+
+<br>
+<br>
 
 ## 🧬 Related
 
-[@igor.dvlpr/mapped-replacer](https://www.npmjs.com/package/@igor.dvlpr/mapped-replacer)
+[@igorskyflyer/mapped-replacer](https://www.npmjs.com/package/@igorskyflyer/mapped-replacer)
 
 > _🗺 Zero-dependency Map and RegExp based string replacer with Unicode support. 🍁_
 
-[@igor.dvlpr/jmap](https://www.npmjs.com/package/@igor.dvlpr/jmap)
+[@igorskyflyer/jmap](https://www.npmjs.com/package/@igorskyflyer/jmap)
 
 > _🕶️ Reads a JSON file into a Map. 🌻_
 
-[@igor.dvlpr/strip-html-headings](https://www.npmjs.com/package/@igor.dvlpr/strip-html-headings)
+[@igorskyflyer/strip-html-headings](https://www.npmjs.com/package/@igorskyflyer/strip-html-headings)
 
 > _🍛 Strips HTML headings! 🍤_
 
-[@igor.dvlpr/strip-headings](https://www.npmjs.com/package/@igor.dvlpr/strip-headings)
+[@igorskyflyer/strip-headings](https://www.npmjs.com/package/@igorskyflyer/strip-headings)
 
 > _⛸ Strips Markdown headings! 🏹_
 
-[@igor.dvlpr/unc-path](https://www.npmjs.com/package/@igor.dvlpr/unc-path)
+[@igorskyflyer/unc-path](https://www.npmjs.com/package/@igorskyflyer/unc-path)
 
 > _🥽 Provides ways of parsing UNC paths and checking whether they are valid. 🎱_
-
 <br>
 <br>
+<br>
 
->
-> Provided by **Igor Dimitrijević** ([*@igorskyflyer*](https://github.com/igorskyflyer/)).
->
+## 👨🏻‍💻 Author
+Created by **Igor Dimitrijević** ([*@igorskyflyer*](https://github.com/igorskyflyer/)).
